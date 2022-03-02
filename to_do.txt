@@ -1,0 +1,24 @@
+*** = fait
+
+- Module virements
+- Voir les comptes que l'on crée s'ajouter automatiquement
+
+V1  :
+- créer un compte client ***
+- pouvoir créer des comptes bancaires *** / crypto
+--- Pour crypto et euro :
+- voir ses comptes 
+- faire des virements
+- faire des retraits, dépôts ***
+- ajouter des bénéficiaires de virements
+- système de génération de numéro de comptes ***
+- système de génération de code de carte bleue // optionnel en soit 
+- panel de gestion admin
+- panel de gestion banquier
+
+V2 :
+
+- service client
+- différents types d'abonnements pour la banque qui offriront des avantages 
+- système de gestion de compte pour les utilisateurs  (voir les dépenses/ revenues dans des graphiques)
+- mettre une api pour voir les crypto en temps réel 
