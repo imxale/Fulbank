@@ -74,6 +74,12 @@ namespace Fulbank
             return unepersonne.updatePerson(this);
         }
 
+        public int ResetPassword()
+        {
+            PersonModel aPerson = new PersonModel();
+            return aPerson.resetPassword(this);
+        }
+
         public int IdPerson
         {
             get => this.idPerson;

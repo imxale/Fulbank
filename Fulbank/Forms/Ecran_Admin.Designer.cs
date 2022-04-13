@@ -33,6 +33,7 @@ namespace Fulbank.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ecran_Admin));
             this.Label_RoleAdmin = new System.Windows.Forms.Label();
             this.Label_NomPrenomAdmin = new System.Windows.Forms.Label();
             this.Label_IdentifiantAdmin = new System.Windows.Forms.Label();
@@ -44,9 +45,27 @@ namespace Fulbank.Forms
             this.Label_NomPanel = new System.Windows.Forms.Label();
             this.Panel_RDV = new System.Windows.Forms.Panel();
             this.dataGridView_RDV = new System.Windows.Forms.DataGridView();
-            this.RDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Panel_OuvertCompte = new System.Windows.Forms.Panel();
-            this.Button_UpdatePerson = new System.Windows.Forms.Button();
+            this.groupBox_ModifAdmin = new System.Windows.Forms.GroupBox();
+            this.dateTime_DNaissance = new System.Windows.Forms.DateTimePicker();
+            this.Label_DateNaissance = new System.Windows.Forms.Label();
+            this.Label_Nom = new System.Windows.Forms.Label();
+            this.Button_Modifier = new System.Windows.Forms.Button();
+            this.TextBox_IdPerson = new System.Windows.Forms.TextBox();
+            this.Label_Adresse = new System.Windows.Forms.Label();
+            this.TextBox_User = new System.Windows.Forms.TextBox();
+            this.Label_CP = new System.Windows.Forms.Label();
+            this.TextBox_Ville = new System.Windows.Forms.TextBox();
+            this.Label_Prenom = new System.Windows.Forms.Label();
+            this.TextBox_Mail = new System.Windows.Forms.TextBox();
+            this.Label_Mail = new System.Windows.Forms.Label();
+            this.TextBox_Prenom = new System.Windows.Forms.TextBox();
+            this.Label_Ville = new System.Windows.Forms.Label();
+            this.TextBox_CP = new System.Windows.Forms.TextBox();
+            this.Label_User = new System.Windows.Forms.Label();
+            this.TextBox_Adresse = new System.Windows.Forms.TextBox();
+            this.TextBox_Nom = new System.Windows.Forms.TextBox();
+            this.Label_Modification = new System.Windows.Forms.Label();
             this.dataGridView_OuvertCompte = new System.Windows.Forms.DataGridView();
             this.Compte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Button_DeconnexionAdmin = new System.Windows.Forms.Button();
@@ -55,6 +74,7 @@ namespace Fulbank.Forms
             this.Panel_RDV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_RDV)).BeginInit();
             this.Panel_OuvertCompte.SuspendLayout();
+            this.groupBox_ModifAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_OuvertCompte)).BeginInit();
             this.SuspendLayout();
             // 
@@ -197,49 +217,231 @@ namespace Fulbank.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_RDV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_RDV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.RDV});
             this.dataGridView_RDV.Location = new System.Drawing.Point(28, 27);
             this.dataGridView_RDV.Name = "dataGridView_RDV";
             this.dataGridView_RDV.RowHeadersWidth = 51;
             this.dataGridView_RDV.Size = new System.Drawing.Size(1265, 441);
             this.dataGridView_RDV.TabIndex = 0;
             // 
-            // RDV
-            // 
-            this.RDV.HeaderText = "RDV";
-            this.RDV.MinimumWidth = 6;
-            this.RDV.Name = "RDV";
-            this.RDV.Width = 125;
-            // 
             // Panel_OuvertCompte
             // 
             this.Panel_OuvertCompte.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Panel_OuvertCompte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(67)))), ((int)(((byte)(153)))));
-            this.Panel_OuvertCompte.Controls.Add(this.Button_UpdatePerson);
+            this.Panel_OuvertCompte.Controls.Add(this.groupBox_ModifAdmin);
+            this.Panel_OuvertCompte.Controls.Add(this.Label_Modification);
             this.Panel_OuvertCompte.Controls.Add(this.dataGridView_OuvertCompte);
             this.Panel_OuvertCompte.Location = new System.Drawing.Point(15, 191);
             this.Panel_OuvertCompte.Name = "Panel_OuvertCompte";
-            this.Panel_OuvertCompte.Size = new System.Drawing.Size(1330, 483);
+            this.Panel_OuvertCompte.Size = new System.Drawing.Size(1330, 484);
             this.Panel_OuvertCompte.TabIndex = 14;
             this.Panel_OuvertCompte.Visible = false;
             // 
-            // Button_UpdatePerson
+            // groupBox_ModifAdmin
             // 
-            this.Button_UpdatePerson.Location = new System.Drawing.Point(1256, 3);
-            this.Button_UpdatePerson.Margin = new System.Windows.Forms.Padding(2);
-            this.Button_UpdatePerson.Name = "Button_UpdatePerson";
-            this.Button_UpdatePerson.Size = new System.Drawing.Size(65, 19);
-            this.Button_UpdatePerson.TabIndex = 1;
-            this.Button_UpdatePerson.Text = "Actualiser";
-            this.Button_UpdatePerson.UseVisualStyleBackColor = true;
-            this.Button_UpdatePerson.Click += new System.EventHandler(this.Button_UpdatePerson_Click);
+            this.groupBox_ModifAdmin.Controls.Add(this.dateTime_DNaissance);
+            this.groupBox_ModifAdmin.Controls.Add(this.Label_DateNaissance);
+            this.groupBox_ModifAdmin.Controls.Add(this.Label_Nom);
+            this.groupBox_ModifAdmin.Controls.Add(this.Button_Modifier);
+            this.groupBox_ModifAdmin.Controls.Add(this.TextBox_IdPerson);
+            this.groupBox_ModifAdmin.Controls.Add(this.Label_Adresse);
+            this.groupBox_ModifAdmin.Controls.Add(this.TextBox_User);
+            this.groupBox_ModifAdmin.Controls.Add(this.Label_CP);
+            this.groupBox_ModifAdmin.Controls.Add(this.TextBox_Ville);
+            this.groupBox_ModifAdmin.Controls.Add(this.Label_Prenom);
+            this.groupBox_ModifAdmin.Controls.Add(this.TextBox_Mail);
+            this.groupBox_ModifAdmin.Controls.Add(this.Label_Mail);
+            this.groupBox_ModifAdmin.Controls.Add(this.TextBox_Prenom);
+            this.groupBox_ModifAdmin.Controls.Add(this.Label_Ville);
+            this.groupBox_ModifAdmin.Controls.Add(this.TextBox_CP);
+            this.groupBox_ModifAdmin.Controls.Add(this.Label_User);
+            this.groupBox_ModifAdmin.Controls.Add(this.TextBox_Adresse);
+            this.groupBox_ModifAdmin.Controls.Add(this.TextBox_Nom);
+            this.groupBox_ModifAdmin.Location = new System.Drawing.Point(409, 314);
+            this.groupBox_ModifAdmin.Name = "groupBox_ModifAdmin";
+            this.groupBox_ModifAdmin.Size = new System.Drawing.Size(399, 166);
+            this.groupBox_ModifAdmin.TabIndex = 20;
+            this.groupBox_ModifAdmin.TabStop = false;
+            // 
+            // dateTime_DNaissance
+            // 
+            this.dateTime_DNaissance.CustomFormat = "dd-MM-yyyy";
+            this.dateTime_DNaissance.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTime_DNaissance.Location = new System.Drawing.Point(9, 50);
+            this.dateTime_DNaissance.Name = "dateTime_DNaissance";
+            this.dateTime_DNaissance.Size = new System.Drawing.Size(100, 20);
+            this.dateTime_DNaissance.TabIndex = 21;
+            this.dateTime_DNaissance.Value = new System.DateTime(2022, 3, 7, 10, 29, 45, 0);
+            // 
+            // Label_DateNaissance
+            // 
+            this.Label_DateNaissance.AutoSize = true;
+            this.Label_DateNaissance.ForeColor = System.Drawing.Color.White;
+            this.Label_DateNaissance.Location = new System.Drawing.Point(115, 51);
+            this.Label_DateNaissance.Name = "Label_DateNaissance";
+            this.Label_DateNaissance.Size = new System.Drawing.Size(98, 13);
+            this.Label_DateNaissance.TabIndex = 3;
+            this.Label_DateNaissance.Text = "Date de Naissance";
+            this.Label_DateNaissance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Label_Nom
+            // 
+            this.Label_Nom.AutoSize = true;
+            this.Label_Nom.ForeColor = System.Drawing.Color.White;
+            this.Label_Nom.Location = new System.Drawing.Point(115, 24);
+            this.Label_Nom.Name = "Label_Nom";
+            this.Label_Nom.Size = new System.Drawing.Size(29, 13);
+            this.Label_Nom.TabIndex = 2;
+            this.Label_Nom.Text = "Nom";
+            this.Label_Nom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Button_Modifier
+            // 
+            this.Button_Modifier.Location = new System.Drawing.Point(167, 138);
+            this.Button_Modifier.Name = "Button_Modifier";
+            this.Button_Modifier.Size = new System.Drawing.Size(75, 23);
+            this.Button_Modifier.TabIndex = 18;
+            this.Button_Modifier.Text = "Modifier";
+            this.Button_Modifier.UseVisualStyleBackColor = true;
+            this.Button_Modifier.Click += new System.EventHandler(this.Button_Modifier_Click);
+            // 
+            // TextBox_IdPerson
+            // 
+            this.TextBox_IdPerson.Location = new System.Drawing.Point(9, 128);
+            this.TextBox_IdPerson.Name = "TextBox_IdPerson";
+            this.TextBox_IdPerson.Size = new System.Drawing.Size(100, 20);
+            this.TextBox_IdPerson.TabIndex = 11;
+            this.TextBox_IdPerson.Visible = false;
+            // 
+            // Label_Adresse
+            // 
+            this.Label_Adresse.AutoSize = true;
+            this.Label_Adresse.ForeColor = System.Drawing.Color.White;
+            this.Label_Adresse.Location = new System.Drawing.Point(115, 79);
+            this.Label_Adresse.Name = "Label_Adresse";
+            this.Label_Adresse.Size = new System.Drawing.Size(45, 13);
+            this.Label_Adresse.TabIndex = 4;
+            this.Label_Adresse.Text = "Adresse";
+            this.Label_Adresse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // TextBox_User
+            // 
+            this.TextBox_User.Location = new System.Drawing.Point(289, 102);
+            this.TextBox_User.Name = "TextBox_User";
+            this.TextBox_User.Size = new System.Drawing.Size(100, 20);
+            this.TextBox_User.TabIndex = 17;
+            // 
+            // Label_CP
+            // 
+            this.Label_CP.AutoSize = true;
+            this.Label_CP.ForeColor = System.Drawing.Color.White;
+            this.Label_CP.Location = new System.Drawing.Point(115, 105);
+            this.Label_CP.Name = "Label_CP";
+            this.Label_CP.Size = new System.Drawing.Size(64, 13);
+            this.Label_CP.TabIndex = 5;
+            this.Label_CP.Text = "Code Postal";
+            this.Label_CP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // TextBox_Ville
+            // 
+            this.TextBox_Ville.Location = new System.Drawing.Point(289, 76);
+            this.TextBox_Ville.Name = "TextBox_Ville";
+            this.TextBox_Ville.Size = new System.Drawing.Size(100, 20);
+            this.TextBox_Ville.TabIndex = 16;
+            // 
+            // Label_Prenom
+            // 
+            this.Label_Prenom.AutoSize = true;
+            this.Label_Prenom.ForeColor = System.Drawing.Color.White;
+            this.Label_Prenom.Location = new System.Drawing.Point(240, 24);
+            this.Label_Prenom.Name = "Label_Prenom";
+            this.Label_Prenom.Size = new System.Drawing.Size(43, 13);
+            this.Label_Prenom.TabIndex = 6;
+            this.Label_Prenom.Text = "Prenom";
+            this.Label_Prenom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // TextBox_Mail
+            // 
+            this.TextBox_Mail.Location = new System.Drawing.Point(289, 48);
+            this.TextBox_Mail.Name = "TextBox_Mail";
+            this.TextBox_Mail.Size = new System.Drawing.Size(100, 20);
+            this.TextBox_Mail.TabIndex = 15;
+            // 
+            // Label_Mail
+            // 
+            this.Label_Mail.AutoSize = true;
+            this.Label_Mail.ForeColor = System.Drawing.Color.White;
+            this.Label_Mail.Location = new System.Drawing.Point(257, 48);
+            this.Label_Mail.Name = "Label_Mail";
+            this.Label_Mail.Size = new System.Drawing.Size(26, 13);
+            this.Label_Mail.TabIndex = 7;
+            this.Label_Mail.Text = "Mail";
+            this.Label_Mail.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // TextBox_Prenom
+            // 
+            this.TextBox_Prenom.Location = new System.Drawing.Point(289, 21);
+            this.TextBox_Prenom.Name = "TextBox_Prenom";
+            this.TextBox_Prenom.Size = new System.Drawing.Size(100, 20);
+            this.TextBox_Prenom.TabIndex = 14;
+            // 
+            // Label_Ville
+            // 
+            this.Label_Ville.AutoSize = true;
+            this.Label_Ville.ForeColor = System.Drawing.Color.White;
+            this.Label_Ville.Location = new System.Drawing.Point(257, 79);
+            this.Label_Ville.Name = "Label_Ville";
+            this.Label_Ville.Size = new System.Drawing.Size(26, 13);
+            this.Label_Ville.TabIndex = 8;
+            this.Label_Ville.Text = "Ville";
+            this.Label_Ville.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // TextBox_CP
+            // 
+            this.TextBox_CP.Location = new System.Drawing.Point(9, 102);
+            this.TextBox_CP.Name = "TextBox_CP";
+            this.TextBox_CP.Size = new System.Drawing.Size(100, 20);
+            this.TextBox_CP.TabIndex = 13;
+            // 
+            // Label_User
+            // 
+            this.Label_User.AutoSize = true;
+            this.Label_User.ForeColor = System.Drawing.Color.White;
+            this.Label_User.Location = new System.Drawing.Point(254, 105);
+            this.Label_User.Name = "Label_User";
+            this.Label_User.Size = new System.Drawing.Size(29, 13);
+            this.Label_User.TabIndex = 9;
+            this.Label_User.Text = "User";
+            this.Label_User.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // TextBox_Adresse
+            // 
+            this.TextBox_Adresse.Location = new System.Drawing.Point(9, 76);
+            this.TextBox_Adresse.Name = "TextBox_Adresse";
+            this.TextBox_Adresse.Size = new System.Drawing.Size(100, 20);
+            this.TextBox_Adresse.TabIndex = 12;
+            // 
+            // TextBox_Nom
+            // 
+            this.TextBox_Nom.Location = new System.Drawing.Point(9, 21);
+            this.TextBox_Nom.Name = "TextBox_Nom";
+            this.TextBox_Nom.Size = new System.Drawing.Size(100, 20);
+            this.TextBox_Nom.TabIndex = 10;
+            // 
+            // Label_Modification
+            // 
+            this.Label_Modification.AutoSize = true;
+            this.Label_Modification.ForeColor = System.Drawing.Color.White;
+            this.Label_Modification.Location = new System.Drawing.Point(587, 286);
+            this.Label_Modification.Name = "Label_Modification";
+            this.Label_Modification.Size = new System.Drawing.Size(64, 13);
+            this.Label_Modification.TabIndex = 19;
+            this.Label_Modification.Text = "Modification";
+            this.Label_Modification.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dataGridView_OuvertCompte
             // 
-            this.dataGridView_OuvertCompte.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView_OuvertCompte.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_OuvertCompte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_OuvertCompte.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(194)))), ((int)(((byte)(236)))));
@@ -265,12 +467,15 @@ namespace Fulbank.Forms
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_OuvertCompte.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView_OuvertCompte.Location = new System.Drawing.Point(28, 27);
+            this.dataGridView_OuvertCompte.MultiSelect = false;
             this.dataGridView_OuvertCompte.Name = "dataGridView_OuvertCompte";
             this.dataGridView_OuvertCompte.RowHeadersVisible = false;
             this.dataGridView_OuvertCompte.RowHeadersWidth = 51;
             this.dataGridView_OuvertCompte.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView_OuvertCompte.Size = new System.Drawing.Size(1265, 441);
+            this.dataGridView_OuvertCompte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_OuvertCompte.Size = new System.Drawing.Size(1265, 226);
             this.dataGridView_OuvertCompte.TabIndex = 0;
+            this.dataGridView_OuvertCompte.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Compte
             // 
@@ -306,9 +511,10 @@ namespace Fulbank.Forms
             this.Controls.Add(this.Label_RoleAdmin);
             this.Controls.Add(this.Label_NomPrenomAdmin);
             this.Controls.Add(this.Label_IdentifiantAdmin);
-            this.Controls.Add(this.Panel_Transaction);
             this.Controls.Add(this.Panel_OuvertCompte);
             this.Controls.Add(this.Panel_RDV);
+            this.Controls.Add(this.Panel_Transaction);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Ecran_Admin";
             this.Text = "Admin";
             this.Panel_Transaction.ResumeLayout(false);
@@ -316,6 +522,9 @@ namespace Fulbank.Forms
             this.Panel_RDV.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_RDV)).EndInit();
             this.Panel_OuvertCompte.ResumeLayout(false);
+            this.Panel_OuvertCompte.PerformLayout();
+            this.groupBox_ModifAdmin.ResumeLayout(false);
+            this.groupBox_ModifAdmin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_OuvertCompte)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -336,10 +545,28 @@ namespace Fulbank.Forms
         private System.Windows.Forms.DataGridView dataGridView_RDV;
         private System.Windows.Forms.Panel Panel_OuvertCompte;
         private System.Windows.Forms.DataGridView dataGridView_OuvertCompte;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RDV;
         private System.Windows.Forms.DataGridViewTextBoxColumn test;
         private System.Windows.Forms.DataGridViewTextBoxColumn Compte;
-        private System.Windows.Forms.Button Button_UpdatePerson;
         private System.Windows.Forms.Button Button_DeconnexionAdmin;
+        private System.Windows.Forms.Label Label_DateNaissance;
+        private System.Windows.Forms.Label Label_Nom;
+        private System.Windows.Forms.Button Button_Modifier;
+        private System.Windows.Forms.TextBox TextBox_User;
+        private System.Windows.Forms.TextBox TextBox_Ville;
+        private System.Windows.Forms.TextBox TextBox_Mail;
+        private System.Windows.Forms.TextBox TextBox_Prenom;
+        private System.Windows.Forms.TextBox TextBox_CP;
+        private System.Windows.Forms.TextBox TextBox_Adresse;
+        private System.Windows.Forms.TextBox TextBox_IdPerson;
+        private System.Windows.Forms.TextBox TextBox_Nom;
+        private System.Windows.Forms.Label Label_User;
+        private System.Windows.Forms.Label Label_Ville;
+        private System.Windows.Forms.Label Label_Mail;
+        private System.Windows.Forms.Label Label_Prenom;
+        private System.Windows.Forms.Label Label_CP;
+        private System.Windows.Forms.Label Label_Adresse;
+        private System.Windows.Forms.Label Label_Modification;
+        private System.Windows.Forms.GroupBox groupBox_ModifAdmin;
+        private System.Windows.Forms.DateTimePicker dateTime_DNaissance;
     }
 }

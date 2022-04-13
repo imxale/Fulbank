@@ -16,6 +16,10 @@ namespace Fulbank
         [STAThread]
         static void Main()
         {
+            /*Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Ecran_ResetPassword());*/
+            // Test si les infos de la BDD sont renseinées
             if (DbMySql.ConnexionBDD() == true)
             {
                 Application.EnableVisualStyles();
@@ -28,8 +32,6 @@ namespace Fulbank
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new Ecran_Connexion());
             }
-
-            
         }
     }
 }

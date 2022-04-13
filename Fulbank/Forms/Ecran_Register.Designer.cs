@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ecran_Register));
             this.CreateAccount = new System.Windows.Forms.Button();
             this.adress = new System.Windows.Forms.TextBox();
             this.Label_Titre = new System.Windows.Forms.Label();
@@ -345,6 +346,7 @@
             this.Controls.Add(this.city);
             this.Controls.Add(this.user_name);
             this.Controls.Add(this.postal);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Ecran_Register";
             this.Text = "Inscription";

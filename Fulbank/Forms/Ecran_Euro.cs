@@ -3,8 +3,12 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Windows.Forms;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.IO;
+using System.Linq;
+using Newtonsoft.Json;
 
 namespace Fulbank
 {
@@ -26,6 +30,10 @@ namespace Fulbank
         Transaction transaction = new Transaction();
         Recipient aRecipient = new Recipient();
         IAccount BankAccount;
+        Wallet aWallet = new Wallet();
+        RendezvousType rendezvousType = new RendezvousType();
+        RendezVous rendezVous = new RendezVous();
+
         public Ecran_Euro(Person aPerson)
         {
             
@@ -37,7 +45,8 @@ namespace Fulbank
             Savingaccount.IdPerson = person.IdPerson;
             Homeloanplan.IdPerson = person.IdPerson;
             transaction.IdPerson = person.IdPerson;
-            
+            aWallet.IdPerson = person.IdPerson;
+
             Data_Show();
             SetPoliceEcriture();
             DisplayAccount();
@@ -51,13 +60,17 @@ namespace Fulbank
             CentrerText(); // Centrer le text de la page
             WaitChargementPage();
 
+            ProcessRepositories(); // Appel API
+                        
             this.WindowState = FormWindowState.Maximized; //Plein écran
 
-            // Test Graphique //
+            // Graphique dépense compte //
             string per = "\n#PERCENT";
             Chart_Depenses.Series["Dépenses"].Points.AddXY("Mcdo" + per, 1000);
             Chart_Depenses.Series["Dépenses"].Points.AddXY("Sport" + per, 500);
             Chart_Depenses.Series["Dépenses"].Points.AddXY("Maison" + per, 2000);
+
+            
 
             // Ajout historique transaction //
 
@@ -70,7 +83,7 @@ namespace Fulbank
         public async Task WaitChargementPage()
         {
             await Task.Delay(50);
-            Console.WriteLine("testDealy");
+            //Console.WriteLine("testDealy");
             CentrerPanel();
         }
 
@@ -88,9 +101,7 @@ namespace Fulbank
             Label_NumeroCompte2.Top = ((Panel_Compte2.Height / 2) - (Label_NumeroCompte2.Height / 2)) + Label_NomCompte2.Height;
             Label_NumeroCompte3.Top = ((Panel_Compte3.Height / 2) - (Label_NumeroCompte3.Height / 2)) + Label_NomCompte3.Height;
             */
-            Label_NomWallet.Left = (Panel_DC_Crypto.Width / 2) - (Label_NomWallet.Width / 2);
-
-            Label_DC_NomCompte.Left = (Panel_DC_Euro.Width / 2) - (Label_DC_NomCompte.Width / 2);
+            Label_CurrentAccount.Left = (Panel_DC_Crypto.Width / 2) - (Label_CurrentAccount.Width / 2);
             Chart_Depenses.Left = (Panel_DC_Euro.Width / 2) - (Chart_Depenses.Width / 2);
             Chart_DepensesMois.Left = (Panel_DC_Euro.Width / 2) - (Chart_DepensesMois.Width / 2);
             Chart_RevenuesMois.Left = (Panel_DC_Euro.Width / 2) - (Chart_RevenuesMois.Width / 2);
@@ -100,8 +111,14 @@ namespace Fulbank
             RichTextBox_RaisonRDV.Left = (Panel_RDV.Width / 2) - (RichTextBox_RaisonRDV.Width / 2);
             Button_RDVEnvoyer.Left = (Panel_RDV.Width / 2) - (Button_RDVEnvoyer.Width / 2);
             GroupBox_Conseiller.Left = (Panel_RDV.Width / 2) - (GroupBox_Conseiller.Width / 2);
-            /*Label_Conseiller.Left = (Panel_RDV.Width / 2) - (Label_Conseiller.Width / 2);
-            Label_NOMConseiller.Left = (Panel_RDV.Width / 2) - (Label_NOMConseiller.Width / 2);*/
+
+            groupBox_Crypto.Top = 70;
+            groupBox_Crypto.Left = (Panel_DC_Crypto.Width / 2) - (groupBox_Crypto.Width / 2);
+
+            dataGridView_CoursCrypto.Left = 30;
+            dataGridView_CoursCrypto.Top = 70;
+            dataGridView_Portefeuille.Left = Panel_DC_Crypto.Width - dataGridView_Portefeuille.Width - 30;
+            dataGridView_Portefeuille.Top = 70;
 
             Label_TitreDepotRetrait.Left = (Panel_DepotRetrait.Width / 2) - (Label_TitreDepotRetrait.Width / 2);
             Label_TitreDepotRetrait.Top = 0;
@@ -184,13 +201,17 @@ namespace Fulbank
             Button_Virement.Visible = false;
             Button_AccountCreation.Visible = false;
             Button_RDV.Visible = false;
+            Panel_DC_Euro.Visible = false;
 
-            Panel_ChoixCompte.BringToFront();
-            Panel_ChoixCompte.Visible = true;
-            /*Show_Crypro_Data();*/
+            Button_GererWallet.Visible = true;
+            Button_GererWallet.Location = new Point(1208, 16);
 
-            /*Crypto_info_Selector();*/
-            //Label_NomCompte.Text = wallet.Name;
+            Panel_DC_Crypto.BringToFront();
+            Panel_DC_Crypto.Visible = true;
+            DisplayWallet();
+            DisplayCrypto();
+            Label_CurrentAccount.Visible = true;
+            Label_CurrentAccount.Text = "Solde compte courrant : " + Currentaccount.Balance;
         }
 
         private void Button_Euro_Click(object sender, EventArgs e)
@@ -216,17 +237,16 @@ namespace Fulbank
             Button_Virement.Visible = true;
             Button_AccountCreation.Visible = true;
             Button_RDV.Visible = true;
+            Button_GererWallet.Visible = false;
 
             Panel_ChoixCompte.BringToFront();
             Panel_ChoixCompte.Visible = true;
-
-            ListBox_ChoixForfait.Items.Clear();
-            
+                        
             Show_Account_Data();
             CentrerPanel();
         }
 
-        // Affiche les données du compte courrant
+        // Affiche les données des comptes
         public void Show_Account_Data()
         {
             Panel_Compte1.Visible = false;
@@ -256,6 +276,7 @@ namespace Fulbank
             }
         }
 
+        // Centrer les pannels des comptes
         public void CentrerPanel()
         {
             //3 Panel true
@@ -300,22 +321,15 @@ namespace Fulbank
                 Panel_Compte3.Location = new Point(296, 16);
             }
 
-            Console.WriteLine("test156654");
+            /*Console.WriteLine("test156654");
             //13; 16
             //296; 16
             //580; 16
             Console.WriteLine(Panel_Compte1.Location);
             Console.WriteLine(Panel_Compte2.Location);
             Console.WriteLine(Panel_Compte3.Location);
-            Console.WriteLine("Id CompteCourant" + Currentaccount.IdAccount + " Id CompteEpargne" + Savingaccount.IdAccount + " Id Logement" + Homeloanplan.IdAccount);
+            Console.WriteLine("Id CompteCourant" + Currentaccount.IdAccount + " Id CompteEpargne" + Savingaccount.IdAccount + " Id Logement" + Homeloanplan.IdAccount);*/
         }
-        /*
-         public void Show_Crypro_Data()
-         {
-             Label_NomCompte.Text = "Wallet Bitcoin";
-             Label_NumeroCompte.Text = "Wallet 1";
-             Label_Solde.Text = Currentaccount.Balance.ToString();
-         }*/
 
         private void Color_Account()
         {
@@ -335,22 +349,40 @@ namespace Fulbank
             }
         }
 
+        // Détails Compte courrant
         private void Label_NomCompte_Click(object sender, EventArgs e)
         {
             Color_Account();
-            transaction.IdAccountSender = Currentaccount.IdAccount;
             transaction.IdPerson = person.IdPerson;
-            DisplayTransactions(); // Afficher les transactions de l'utilisateur
+            dataGridView_HistoriqueTransaction.DataSource = null;
+            transaction.IdAccountSender = Currentaccount.IdAccount;
+            transaction.SelectTransactionFor();
+            dataGridView_HistoriqueTransaction.DataSource = transaction.SelectTransactionFor();
+            Label_DC_NumeroCompte.Text = "N° Compte: " + Currentaccount.IdAccount;
         }
 
-        private void Label_NomCompte2_Click_1(object sender, EventArgs e)
+        // Détails compte épargne
+        private void Label_NomCompte2_Click(object sender, EventArgs e)
         {
             Color_Account();
+            transaction.IdPerson = person.IdPerson;
+            dataGridView_HistoriqueTransaction.DataSource = null;
+            transaction.IdAccountSender = Savingaccount.IdAccount;
+            transaction.SelectTransactionFor();
+            dataGridView_HistoriqueTransaction.DataSource = transaction.SelectTransactionFor();
+            Label_DC_NumeroCompte.Text = "N° Compte: " + Savingaccount.IdAccount;
         }
 
-        private void Label_NomCompte3_Click_1(object sender, EventArgs e)
+        // Détails compte épargne logement
+        private void Label_NomCompte3_Click(object sender, EventArgs e)
         {
             Color_Account();
+            transaction.IdPerson = person.IdPerson;
+            dataGridView_HistoriqueTransaction.DataSource = null;
+            transaction.IdAccountSender = Homeloanplan.IdAccount;
+            transaction.SelectTransactionFor();
+            dataGridView_HistoriqueTransaction.DataSource = transaction.SelectTransactionFor();
+            Label_DC_NumeroCompte.Text = "N° Compte: " + Homeloanplan.IdAccount;
         }
 
         private void Button_DepotRetrait_Click(object sender, EventArgs e)
@@ -365,6 +397,18 @@ namespace Fulbank
             // Affichage du panel Virement //
             Panel_Virement.BringToFront();
             Panel_Virement.Visible = true;
+            DisplayRecipientList();
+        }
+
+        private void DisplayRecipientList()
+        {
+            aRecipient.IdPerson = person.IdPerson;
+            listBox_recipientList.Items.Clear();
+
+            foreach (DataRow dr in aRecipient.SelectAllRecipientFor().Rows)
+            {
+                listBox_recipientList.Items.Add(dr["NAME"].ToString());
+            }
         }
 
         private void Button_Deconnexion_Click(object sender, EventArgs e)
@@ -422,7 +466,7 @@ namespace Fulbank
             }
         }
 
-        // Cette procédure insert dans la base de données les données des retraits et des dépots et met à jour le solde des comptes
+        // Cette procédure insert dans la base de données les données des retraits et des dépots et met à jour le solde les comptes
         public void Debit_RetraitTransac()
         {
             string selectedAccount = ListBox_Compte.SelectedItem.ToString();
@@ -647,6 +691,7 @@ namespace Fulbank
                     break;
             }
         }
+
         private void Button_ValiderVirement_Click(object sender, EventArgs e)
         {
             try
@@ -679,15 +724,6 @@ namespace Fulbank
                 default:
                     break;
             }
-        }
-
-        // Affiche les transactions effectuées sur le compte courrant
-        private void DisplayTransactions()
-        {
-            dataGridView_HistoriqueTransaction.DataSource = null;
-            transaction.IdAccountSender = Currentaccount.IdAccount;
-            transaction.SelectTransactionFor();
-            dataGridView_HistoriqueTransaction.DataSource = transaction.SelectTransactionFor();
         }
 
         private void DisplayAccountVirement()
@@ -860,6 +896,7 @@ namespace Fulbank
         {
             Panel_RDV.BringToFront();
             Panel_RDV.Visible = true;
+            displayCreationRDVItems();
         }
 
         private void Label_Solde1_Click(object sender, EventArgs e)
@@ -912,6 +949,8 @@ namespace Fulbank
                     if (dr["NAME"].ToString() != aRecipient.Name)
                     {
                         aRecipient.InsertRecipient();
+                        TextBox_AjouterNom.Clear();
+                        TextBox_AjouterIdentifiant.Clear();
                     }
                     else
                     {
@@ -922,7 +961,352 @@ namespace Fulbank
             else
             {
                 MessageBox.Show("Le nom ne peut pas être celui d'un compte existant");
+            }
+            DisplayRecipientList();
+        }
+
+        //////////// Wallet ////////////
+
+        // Afficher liste Crypto création WALLET
+        private void DisplayListCrypto()
+        {
+            ListBox_TypeWalletAjout.Items.Clear();
+            foreach (DataRow dr in dataAPI.Rows)
+            {
+                ListBox_TypeWalletAjout.Items.Add(dr["NAME"].ToString());
+            }
+        }
+
+        // Créer un compte
+        private void Button_WalletAjout_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool result = false;                
+                foreach (DataRow dr in aWallet.SelectWallet().Rows)
+                {
+                    if (ListBox_TypeWalletAjout.SelectedItem.ToString() != dr["NOMCRYPTO"].ToString())
+                    {
+                        result = true;
+                    }
+                    else
+                    {
+                        result = false;
+                        break;
+                    }
+                }
+                if(result == true)
+                {
+                    aWallet.NomCrypto = ListBox_TypeWalletAjout.SelectedItem.ToString();
+                    aWallet.IdPerson = person.IdPerson;
+                    aWallet.Name = TextBox_NomWalletAjout.Text;
+                    aWallet.CreateWallet();
+                    DisplayWalletGestion();
+                    MessageBox.Show("Wallet crée avec succès");
+                }
+                else
+                {
+                    MessageBox.Show("Vous possédez déjà un wallet avec ce type de crypto");
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Button_ValiderCrypto_Achat_Click(object sender, EventArgs e)
+        {
+            bool result = true;
+            // Vérifie si l'utilisateur possède un wallet du type de la crypto qu'il souhaite acheter
+            foreach (DataRow dr in aWallet.SelectWallet().Rows)
+            {
+                if (CryptoName == null)
+                {
+                    MessageBox.Show("Veuillez d'abord sélectionner une crypto");
+                    break;
+                }
+                else
+                {
+                    if (dr["NOMCRYPTO"].ToString() != CryptoName.ToString())
+                    {
+                        result = true;
+                    }
+                    else
+                    {
+                        result = false;
+                        aWallet.NomCrypto = CryptoName.ToString();
+                        break;
+                    }
+                }                            
+            }                       
+
+            if (result == false)
+            {
+                float price = float.Parse(CryptoCurrency.Replace(".", ","));
+
+                if (Currentaccount.Balance >= price)
+                {
+                    aWallet.IdPerson = person.IdPerson;
+                    // 1 //
+                    float quantity = float.Parse(TextBox_QTECrypto.Text); // Quantité à acheter
+                    aWallet.Quantity = aWallet.Purchase(quantity);
+                    aWallet.UpdateBalance2();
+
+                    // 2 //                
+                    Currentaccount.Balance -= quantity * price;
+                    Currentaccount.UpdateBalance2();
+
+                    // 3 //
+                    transaction.Action = "Achat Crypto";
+                    transaction.Amount = quantity * price;
+                    transaction.IdWallet = aWallet.IdWallet;
+                    transaction.IdTerminal = 1;
+                    transaction.IdAccountSender = Currentaccount.IdAccount;
+                    transaction.InsertTransaction();
+
+                    TextBox_QTECrypto.Clear();
+
+                    // Actualiser le WALLET
+                    Label_CurrentAccount.Text = "Solde compte courrant : " + Currentaccount.Balance;
+                    DisplayWallet();
+                }
+                else
+                {
+                    MessageBox.Show("Solde du compte courrant insufissant");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vous ne possédez pas de portefeuille avec ce type de crypto");
             }            
+        }
+
+
+        private void Button_ValiderCrypto_Vente_Click(object sender, EventArgs e)
+        {
+            aWallet.IdPerson = person.IdPerson;
+            float price = 0;
+            // 1 //
+            float quantity = float.Parse(TextBox_QTECrypto.Text); // Quantité à acheter
+            aWallet.Quantity = aWallet.Sell(quantity);
+            aWallet.UpdateBalance();
+
+            // // // Récupérer le prix de la crypto selectionné
+            foreach (DataRow dr in dataAPI.Rows)
+            {
+                if(dr["NAME"].ToString() == aWallet.NomCrypto)
+                {
+                    price = float.Parse(dr["Prix"].ToString().Replace(".", ","));
+                }
+            }
+            // 2 //
+            Currentaccount.Balance += quantity * price;
+            Currentaccount.UpdateBalance2();
+
+            // 3 //
+            transaction.Action = "Vente Crypto";
+            transaction.Amount = quantity * price;
+            transaction.IdWallet = aWallet.IdWallet;
+            transaction.IdTerminal = 1;
+            transaction.IdReceiver = Currentaccount.IdAccount;
+            transaction.InsertTransaction();
+
+            TextBox_QTECrypto.Clear();
+
+            // Actualiser le WALLET
+            DisplayWallet();
+            Label_CurrentAccount.Text = "Solde compte courrant : " + Currentaccount.Balance;
+        }
+        
+        // Afficher Wallet 
+        public void DisplayWallet()
+        {
+            dataGridView_Portefeuille.DataSource = null;
+            dataGridView_Portefeuille.DataSource = aWallet.SelectWallet();
+        }
+
+        // Afficher Crypto
+
+        public void DisplayCrypto()
+        {
+            dataGridView_CoursCrypto.DataSource = null;
+            dataGridView_CoursCrypto.DataSource = dataAPI;
+        }      
+        
+        public void DisplayWalletGestion()
+        {
+            dataGridView_WalletClient.DataSource = null;
+            dataGridView_WalletClient.DataSource = aWallet.SelectWallet();
+        }
+         
+        // DataGridView Wallet 
+        private void dataGridView_Portefeuille_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dataGridView_Portefeuille.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    aWallet.IdWallet = int.Parse(dataGridView_Portefeuille.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    aWallet.Name = dataGridView_Portefeuille.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    aWallet.NomCrypto = dataGridView_Portefeuille.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    aWallet.Quantity = float.Parse(dataGridView_Portefeuille.Rows[e.RowIndex].Cells[3].Value.ToString());  
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ne cliquez pas sur l'entête");
+            }
+        }
+
+        public string CryptoName;
+        public string CryptoCurrency;
+
+        // DataGridView Crypto Currency
+        private void dataGridView_CoursCrypto_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dataGridView_CoursCrypto.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    CryptoName = dataGridView_CoursCrypto.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    CryptoCurrency = dataGridView_CoursCrypto.Rows[e.RowIndex].Cells[1].Value.ToString();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ne cliquez pas sur l'entête");
+            }
+        }
+
+        // DataGridView gestion wallet
+        private void dataGridView_WalletClient_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dataGridView_WalletClient.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    aWallet.IdWallet = int.Parse(dataGridView_WalletClient.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    aWallet.Name = dataGridView_WalletClient.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    aWallet.NomCrypto = dataGridView_WalletClient.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    aWallet.Quantity = float.Parse(dataGridView_WalletClient.Rows[e.RowIndex].Cells[3].Value.ToString());
+                    textBox_ChangeWalletName.Text = aWallet.Name;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ne cliquez pas sur l'entête");
+            }
+        }
+
+        // Supprimer un wallet
+        private void button_DeleteWallet_Click(object sender, EventArgs e)
+        {
+            if (aWallet.Quantity == 0)
+            {
+                aWallet.DeleteWallet(); // Delete avec l'Id du Wallet
+                DisplayWalletGestion();
+            }
+            else
+            {
+                MessageBox.Show("Vous ne pouvez pas supprimer un Wallet qui n'est pas vide");
+            }
+        }
+
+        // Changer le nom d'un wallet
+        private void button_ChangeName_Click(object sender, EventArgs e)
+        {
+            aWallet.Name = textBox_ChangeWalletName.Text;
+            aWallet.ChangeWalletName();
+            DisplayWalletGestion();
+        }
+
+
+        public static DataTable dataAPI = new DataTable();
+        private static readonly HttpClient client = new HttpClient();
+
+        // Fonction d'envoi de la requête POST dans l'API
+        public static async void ProcessRepositories()
+        {
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            var response = await client.GetAsync("https://api.coinlore.net/api/tickers/?limit=10");
+            var content = await response.Content.ReadAsStringAsync();
+
+            dataAPI.Columns.Clear();
+            dataAPI.Rows.Clear();
+            // Afficher les nom des colonnes du tableau de la liste des cryptos
+            dataAPI.Columns.Add("Name");
+            dataAPI.Columns.Add("Prix");
+
+            var deserialize_json = JsonConvert.DeserializeObject<JsonData>(content);
+                        
+            foreach (var item in deserialize_json.data)
+            {
+                DataRow row = dataAPI.NewRow();
+                row["Name"] = item.name;
+                row["Prix"] = item.price_usd;
+                dataAPI.Rows.Add(row);
+            }
+        }
+          
+        private void Button_GererWallet_Click(object sender, EventArgs e)
+        {
+            Panel_GererWallet.BringToFront();
+            Panel_GererWallet.Visible = true;
+            DisplayListCrypto();
+            DisplayWalletGestion();
+        }
+
+        //////////// RDV ////////////
+        
+        // Afficher les motifs de RDV
+        public void displayCreationRDVItems()
+        {
+            ListBox_RaisonRDV.Items.Clear();
+            foreach (DataRow dr in rendezvousType.selectRDVLibelle().Rows)
+            {
+                ListBox_RaisonRDV.Items.Add(dr["LIBELLE"].ToString());
+            }
+        }
+
+        // Créer un RDV
+        private void Button_RDVEnvoyer_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                rendezvousType.Libelle = ListBox_RaisonRDV.SelectedItem.ToString();
+                foreach (DataRow dr in rendezvousType.selectRDVIdByLibelle().Rows)
+                {
+                    rendezvousType.IdRendezvousType = int.Parse(dr["IDRENDEZVOUSTYPE"].ToString());
+                }
+                rendezVous.IdReason = rendezvousType.IdRendezvousType;
+                rendezVous.IdPerson = person.IdPerson;
+                rendezVous.Comment = RichTextBox_RaisonRDV.Text;
+                rendezVous.createRDV();
+                RichTextBox_RaisonRDV.Clear();
+                MessageBox.Show("Rendez vous enregistré");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button_DeleteRecipient_Click(object sender, EventArgs e)
+        {
+            aRecipient.IdPerson = person.IdPerson;
+            foreach (DataRow dr in aRecipient.SelectAllRecipientFor().Rows)
+            {
+                if(dr["NAME"].ToString() == listBox_recipientList.SelectedItem.ToString())
+                {
+                    aRecipient.IdRecipient = int.Parse(dr["IDRECIPIENT"].ToString());
+                    aRecipient.DeleteRecipient();
+                    DisplayRecipientList();
+                }
+            }
         }
     }
 }

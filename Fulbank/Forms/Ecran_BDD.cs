@@ -80,5 +80,18 @@ namespace Fulbank
             this.Close();
         }
 
+        private void button_testbdd_Click(object sender, EventArgs e)
+        {
+            label_testBDD.Visible = true;
+            try
+            {
+                DbMySql.GetDBConn().Open();
+                label_testBDD.Text = "Connexion établie";
+            }
+            catch (Exception ex)
+            {
+                label_testBDD.Text = "Connexion échouée" + "\n" + ex.Message;
+            }
+        }
     }
 }

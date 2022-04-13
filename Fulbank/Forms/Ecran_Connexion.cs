@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Text;
-using MySql.Data.MySqlClient;
 using Fulbank.Forms;
 
 namespace Fulbank
@@ -21,14 +20,15 @@ namespace Fulbank
         private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont,
         IntPtr pdv, [System.Runtime.InteropServices.In] ref uint pcFonts);
         private PrivateFontCollection fonts = new PrivateFontCollection();
-        Font myFont;       
+        Font myFont; 
+        
         
         public Ecran_Connexion()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;            
             FontParam();
-            CentrerTexte();
+            CentrerTexte();               
         }
         
         public void FontParam()
@@ -56,6 +56,7 @@ namespace Fulbank
             TextBox_MDP.Left = (this.Width / 2) - (TextBox_MDP.Width / 2);
             Button_Connexion.Left = (this.Width / 2) - (Button_Connexion.Width / 2);
             RadioButton_AfficherMotDePasse.Left = (this.Width / 2) - (RadioButton_AfficherMotDePasse.Width / 2);
+            label_forgotPassword.Left = (this.Width / 2) - (label_forgotPassword.Width /2);
         }
 
         private void AfficherMotDePasse_CheckedChanged(object sender, EventArgs e)
@@ -73,8 +74,8 @@ namespace Fulbank
 
         private void Button_Connexion_Click(object sender, EventArgs e)
         {
-            try
-            {
+            /*try
+            {*/
                 Person person = new Person
                 {
                     User = TextBox_Identifiant.Text
@@ -83,47 +84,48 @@ namespace Fulbank
                 {
                     MessageBox.Show("Indentifiant incorrect");
                 }
-                    
-                foreach (DataRow dr in person.SelectPerson().Rows)
+
+            foreach (DataRow dr in person.SelectPerson().Rows)
+            {
+                DateTime creationdate = DateTime.Parse(dr["CREATIONDATE"].ToString());
+                person.IdRole = int.Parse(dr["IDROLE"].ToString());
+                person.IdPerson = int.Parse(dr["IDPERSON"].ToString());
+                if (Hash(TextBox_MDP.Text + creationdate.Date.ToString("yyyy-MM-dd")) == dr["PASSWORD"].ToString())
                 {
-                    DateTime creationdate = DateTime.Parse(dr["CREATIONDATE"].ToString());
-                    person.IdRole = int.Parse(dr["IDROLE"].ToString());
-                    person.IdPerson = int.Parse(dr["IDPERSON"].ToString());
-                    if (Hash(TextBox_MDP.Text + creationdate.Date.ToString("yyyy-MM-dd")) == dr["PASSWORD"].ToString())
+                    if (Convert.ToBoolean(dr["ISVALID"]))
                     {
-                        if (Convert.ToBoolean(dr["ISVALID"]))
+                        // Banquier ou Client
+                        if (person.IdRole == 1)
                         {
-                            // Banquier ou Client
-                            if (person.IdRole == 1)
-                            {
-                                Ecran_Euro f_eu = new Ecran_Euro(person);
-                                this.Hide();
-                                f_eu.ShowDialog();
-                                this.Close();
-                            }
-                            else if (person.IdRole == 2)  // Admin
-                            {
-                                Ecran_Admin admin_ea = new Ecran_Admin(person);
-                                this.Hide();
-                                admin_ea.ShowDialog();
-                                this.Close();
-                            }
+                            Ecran_Euro f_eu = new Ecran_Euro(person);
+                            this.Hide();
+                            f_eu.ShowDialog();
+                            this.Close();
                         }
-                        else
+                        else if (person.IdRole == 2)  // Admin
                         {
-                            MessageBox.Show("Votre compte n'est pas encore valide");
+                            Ecran_Admin admin_ea = new Ecran_Admin(person);
+                            this.Hide();
+                            admin_ea.ShowDialog();
+                            this.Close();
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Mot de passe incorrect");
+                        MessageBox.Show("Votre compte n'est pas encore valide");
                     }
                 }
-            }
+                else
+                {
+                    MessageBox.Show("Mot de passe incorrect");
+                }
+                }
+            /*}
             catch
             {
                 MessageBox.Show("La connexion a échouée");
-            }
+            }*/
+
         }
 
         //algorithme de hashage 
@@ -145,7 +147,15 @@ namespace Fulbank
             this.Hide();
             register.ShowDialog();
             this.Close();
-        }        
+        }
+
+        private void label_forgotPassword_Click(object sender, EventArgs e)
+        {
+            Ecran_ResetPassword resetPassword = new Ecran_ResetPassword();
+            this.Hide();
+            resetPassword.ShowDialog();
+            this.Close();
+        }
     }
         
 }

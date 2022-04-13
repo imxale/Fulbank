@@ -23,6 +23,7 @@ namespace Fulbank.Forms
         Person person;
         Role role = new Role();
         Transaction transaction = new Transaction();
+        RendezVous rendezVous = new RendezVous();
 
         public Ecran_Admin(Person aPerson)
         {
@@ -59,6 +60,8 @@ namespace Fulbank.Forms
             Label_NomPanel.Font = new Font(myFont.FontFamily, 10, FontStyle.Regular);
             Label_Precedent.Font = new Font(myFont.FontFamily, 20, FontStyle.Regular);
             Label_Suivant.Font = new Font(myFont.FontFamily, 20, FontStyle.Regular);
+
+            Label_Modification.Font = new Font(myFont.FontFamily, 10, FontStyle.Regular);
         }
 
         public void CentrerTexte()
@@ -72,20 +75,37 @@ namespace Fulbank.Forms
             dataGridView_RDV.Left = (Panel_RDV.Width / 2) - (dataGridView_RDV.Width / 2);
             dataGridView_Transaction.Left = (Panel_Transaction.Width / 2) - (dataGridView_Transaction.Width / 2);
 
-            dataGridView_OuvertCompte.Top = (Panel_OuvertCompte.Height / 2) - (dataGridView_OuvertCompte.Height / 2);
+            dataGridView_OuvertCompte.Top = 20;
             dataGridView_RDV.Top = (Panel_RDV.Height / 2) - (dataGridView_RDV.Height / 2);
             dataGridView_Transaction.Top = (Panel_Transaction.Height / 2) - (dataGridView_Transaction.Height / 2);
 
             Label_NomPanel.Left = (this.Width / 2) - (Label_NomPanel.Width / 2);
             Label_Precedent.Left = ((this.Width / 2) - (Label_Precedent.Width / 2)) - Label_NomPanel.Width;
             Label_Suivant.Left = ((this.Width / 2) - (Label_Suivant.Width / 2)) + Label_NomPanel.Width;
+            Label_Modification.Left = ((Panel_OuvertCompte.Width / 2) - (Label_Modification.Width / 2));
 
             Label_NomPanel.Top = 160;
             Label_Suivant.Top = 145;
             Label_Precedent.Top = 145;
+            Label_Modification.Top = 265;
 
             dataGridView_Transaction.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView_Transaction.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+
+            groupBox_ModifAdmin.Left = ((Panel_OuvertCompte.Width / 2) - (groupBox_ModifAdmin.Width / 2));
+            TextBox_Nom.Left = 10;
+            //TextBox_DateNaissance.Left = 10;
+            dateTime_DNaissance.Left = 10;
+            TextBox_Adresse.Left = 10;
+            TextBox_CP.Left = 10;
+
+            TextBox_Prenom.Left = groupBox_ModifAdmin.Width - TextBox_Prenom.Width - 10;
+            TextBox_Mail.Left = groupBox_ModifAdmin.Width - TextBox_Mail.Width - 10;
+            TextBox_Ville.Left = groupBox_ModifAdmin.Width - TextBox_Ville.Width - 10;
+            TextBox_User.Left = groupBox_ModifAdmin.Width - TextBox_User.Width - 10;
+
+            Button_Modifier.Left = ((groupBox_ModifAdmin.Width / 2) - (Button_Modifier.Width / 2));
         }
 
         private void Label_Suivant_Click(object sender, EventArgs e)
@@ -99,17 +119,24 @@ namespace Fulbank.Forms
                 case "Transactions":
                     Label_NomPanel.Text = rdv;
                     Panel_RDV.Visible = true;
+                    Panel_OuvertCompte.Visible = false;
+                    Panel_Transaction.Visible = false;
                     Panel_RDV.BringToFront();
+                    DisplayRDV();
                     break;
                 case "Rendez-vous":
                     Label_NomPanel.Text = compte;
                     Panel_OuvertCompte.Visible = true;
+                    Panel_RDV.Visible = false;
+                    Panel_Transaction.Visible = false;
                     Panel_OuvertCompte.BringToFront();
                     DisplayPersonAdmin();
                     break;
                 case "Comptes":
                     Label_NomPanel.Text = trans;
                     Panel_Transaction.Visible = true;
+                    Panel_OuvertCompte.Visible = false;
+                    Panel_RDV.Visible = false;
                     Panel_Transaction.BringToFront();
                     DisplayTransactions();
                     break;
@@ -127,19 +154,26 @@ namespace Fulbank.Forms
                 case "Transactions":
                     Label_NomPanel.Text = compte;
                     Panel_OuvertCompte.Visible = true;
+                    Panel_RDV.Visible = false;
+                    Panel_Transaction.Visible = false;
                     Panel_OuvertCompte.BringToFront();
                     DisplayPersonAdmin();
                     break;
                 case "Rendez-vous":
                     Label_NomPanel.Text = trans;
                     Panel_Transaction.Visible = true;
+                    Panel_OuvertCompte.Visible = false;
+                    Panel_RDV.Visible = false;
                     Panel_Transaction.BringToFront();
                     DisplayTransactions();
                     break;
                 case "Comptes":
                     Label_NomPanel.Text = rdv;
                     Panel_RDV.Visible = true;
+                    Panel_OuvertCompte.Visible = false;
+                    Panel_Transaction.Visible = false;
                     Panel_RDV.BringToFront();
+                    DisplayRDV();
                     break;
             }
         }
@@ -147,15 +181,19 @@ namespace Fulbank.Forms
         private void DisplayTransactions()
         {
             dataGridView_Transaction.DataSource = null;
-            transaction.SelectTransaction();
             dataGridView_Transaction.DataSource = transaction.SelectTransaction();
         }
 
         private void DisplayPersonAdmin()
         {
             dataGridView_OuvertCompte.DataSource = null;
-            person.SelectPersonAdmin();
             dataGridView_OuvertCompte.DataSource = person.SelectPersonAdmin();
+        }
+
+        private void DisplayRDV()
+        {
+            dataGridView_RDV.DataSource = null;
+            dataGridView_RDV.DataSource = rendezVous.SelectRDV();
         }
 
         // Afficher les données de l'utilisateur
@@ -206,6 +244,59 @@ namespace Fulbank.Forms
             this.Hide();
             ecran_Connexion.ShowDialog();
             this.Close();
+        }
+
+        /* Récupérer les informations des USERS dans les TEXTBOX */
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                //int colonne = e.ColumnIndex;
+                int ligne = e.RowIndex;
+
+                string id = dataGridView_OuvertCompte[1, ligne].Value.ToString();
+                string nom = dataGridView_OuvertCompte[3, ligne].Value.ToString();
+                string prenom = dataGridView_OuvertCompte[4, ligne].Value.ToString();
+                DateTime date = (DateTime)dataGridView_OuvertCompte[5, ligne].Value;
+                string mail = dataGridView_OuvertCompte[6, ligne].Value.ToString();
+                string adresse = dataGridView_OuvertCompte[7, ligne].Value.ToString();
+                string ville = dataGridView_OuvertCompte[8, ligne].Value.ToString();
+                string CP = dataGridView_OuvertCompte[9, ligne].Value.ToString();
+                string user = dataGridView_OuvertCompte[10, ligne].Value.ToString();
+
+                TextBox_IdPerson.Text = id;
+                TextBox_Nom.Text = nom;
+                TextBox_Prenom.Text = prenom;
+                //TextBox_DateNaissance.Text = date;
+                dateTime_DNaissance.Value = date;
+                TextBox_Mail.Text = mail;
+                TextBox_Adresse.Text = adresse;
+                TextBox_Ville.Text = ville;
+                TextBox_CP.Text = CP;
+                TextBox_User.Text = user;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Sélectionnez une case remplie");
+            }
+        }
+
+        /* Envoie des informations à la BDD */
+        private void Button_Modifier_Click(object sender, EventArgs e)
+        {
+            Person person = new Person();
+            person.IdPerson = int.Parse(TextBox_IdPerson.Text);
+            person.Name = TextBox_Nom.Text;
+            person.Fname = TextBox_Prenom.Text;
+            person.Birth = dateTime_DNaissance.Value;
+            person.Mail = TextBox_Mail.Text;
+            person.Address = TextBox_Adresse.Text;
+            person.City = TextBox_Ville.Text;
+            person.Postal = int.Parse(TextBox_CP.Text);
+            person.User = TextBox_User.Text;
+            //Console.WriteLine(person.Name);
+            person.UpdatePerson();
+            DisplayPersonAdmin();
         }
     }
 }

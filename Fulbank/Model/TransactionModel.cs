@@ -18,7 +18,7 @@ namespace Fulbank.Model
             MySqlConnection con = DbMySql.GetDBConn();
             con.Open();
             MySqlCommand cmd = new MySqlCommand(querry, con);
-            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
 
             cmd.Parameters.Add("@idperson", MySqlDbType.Int64).Value = aTransac.IdPerson;
@@ -37,11 +37,11 @@ namespace Fulbank.Model
 
         public DataTable selectTransactionsFor(int idPerson, int idAccount)
         {
-            string sqlCmd = "SELECT IDTRANSACTION, wallet.NAME as 'Nom Wallet', terminal.NAME as 'Nom Terminal', AMOUNT as Montant, DATETRANS 'Date du Transfert', " +
-                "ACTION as 'Action', person.USER as 'Nom utilisateur destinataire', transaction.IDACCOUNTRECEIVER as 'Id Compte destinataire' " +
+            string sqlCmd = "SELECT wallet.NAME as 'Nom Wallet', terminal.NAME as 'Nom Terminal', AMOUNT as Montant, DATETRANS 'Date du Transfert', " +
+                "ACTION as 'Action', person.USER as 'Nom utilisateur destinataire' " +
                 "FROM transaction " +
                 "LEFT JOIN wallet ON wallet.IDWALLET = transaction.IDWALLET " +
-                "INNER JOIN terminal ON terminal.IDTERMINAL = transaction.IDTERMINAL " +
+                "LEFT JOIN terminal ON terminal.IDTERMINAL = transaction.IDTERMINAL " +
                 "LEFT JOIN accountuser ON accountuser.IDACCOUNT = transaction.IDACCOUNTRECEIVER " +
                 "LEFT JOIN person ON person.IDPERSON = accountuser.IDPERSON " +
                 "LEFT JOIN accountype ON accountype.IDACCOUNTTYPE = transaction.IDACCOUNTSENDER " +
@@ -60,7 +60,11 @@ namespace Fulbank.Model
             DataTable dt = new DataTable();
             DataSet ds = new DataSet();
             dt.Clear();
-            string sqlCmd = "SELECT * FROM transaction ";
+            string sqlCmd = "SELECT person.NAME as Nom, person.FNAME as Prenom, terminal.NAME as Nom_Terminal, wallet.NAME as Nom_Wallet, transaction.AMOUNT as Montant, DATETRANS as Date_Transfert, action as Action, IDACCOUNTRECEIVER as Numero_Compte_Destinataire, IDACCOUNTSENDER as Numero_Compte_Envoyeur "+
+             " FROM transaction " +
+             " INNER JOIN person ON person.IDPERSON = transaction.IDPERSON " +
+             " INNER JOIN terminal ON terminal.IDTERMINAL = transaction.IDTERMINAL " +
+             " LEFT JOIN wallet ON wallet.IDWALLET = transaction.IDWALLET";
             MySqlDataAdapter adr = new MySqlDataAdapter(sqlCmd, DbMySql.GetDBConn());     
             adr.Fill(ds);
             dt = ds.Tables[0];

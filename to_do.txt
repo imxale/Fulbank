@@ -7,18 +7,16 @@ V1  :
 - créer un compte client ***
 - pouvoir créer des comptes bancaires *** / crypto
 --- Pour crypto et euro :
-- voir ses comptes 
-- faire des virements
+- voir ses comptes ***
+- faire des virements ***
 - faire des retraits, dépôts ***
-- ajouter des bénéficiaires de virements
+- ajouter des bénéficiaires de virements ***
 - système de génération de numéro de comptes ***
 - système de génération de code de carte bleue // optionnel en soit 
-- panel de gestion admin
-- panel de gestion banquier
+- panel de gestion admin ***
 
 V2 :
 
-- service client
-- différents types d'abonnements pour la banque qui offriront des avantages 
+- service client ***
 - système de gestion de compte pour les utilisateurs  (voir les dépenses/ revenues dans des graphiques)
-- mettre une api pour voir les crypto en temps réel 
+- mettre une api pour voir les crypto en temps réel ***

@@ -29,34 +29,86 @@ namespace Fulbank
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend16 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea17 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend17 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea18 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend18 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint16 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 500D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint17 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 50D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint18 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2000D);
-            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 500D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 50D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2000D);
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ecran_Euro));
             this.Button_Deconnexion = new System.Windows.Forms.Button();
             this.Label_Identifiant = new System.Windows.Forms.Label();
             this.Label_NomPrenom = new System.Windows.Forms.Label();
             this.Panel_EcranEuro = new System.Windows.Forms.Panel();
+            this.Button_GererWallet = new System.Windows.Forms.Button();
             this.Button_RDV = new System.Windows.Forms.Button();
             this.Button_AccountCreation = new System.Windows.Forms.Button();
             this.Button_DepotRetrait = new System.Windows.Forms.Button();
             this.Button_Virement = new System.Windows.Forms.Button();
             this.Button_Crypto = new System.Windows.Forms.Button();
             this.Button_Euro = new System.Windows.Forms.Button();
+            this.Panel_GererWallet = new System.Windows.Forms.Panel();
+            this.button_DeleteWallet = new System.Windows.Forms.Button();
+            this.button_ChangeName = new System.Windows.Forms.Button();
+            this.label_ChangeWalletName = new System.Windows.Forms.Label();
+            this.textBox_ChangeWalletName = new System.Windows.Forms.TextBox();
+            this.label_WalletClient = new System.Windows.Forms.Label();
+            this.dataGridView_WalletClient = new System.Windows.Forms.DataGridView();
+            this.Button_WalletAjout = new System.Windows.Forms.Button();
+            this.Label_NomWalletAjout = new System.Windows.Forms.Label();
+            this.ListBox_TypeWalletAjout = new System.Windows.Forms.ListBox();
+            this.TextBox_NomWalletAjout = new System.Windows.Forms.TextBox();
+            this.Panel_DC_Crypto = new System.Windows.Forms.Panel();
+            this.Label_TitreData_Droite = new System.Windows.Forms.Label();
+            this.Label_TitreData_Gauche = new System.Windows.Forms.Label();
+            this.dataGridView_Portefeuille = new System.Windows.Forms.DataGridView();
+            this.dataGridView_CoursCrypto = new System.Windows.Forms.DataGridView();
+            this.groupBox_Crypto = new System.Windows.Forms.GroupBox();
+            this.Button_ValiderCrypto_Vente = new System.Windows.Forms.Button();
+            this.Button_ValiderCrypto_Achat = new System.Windows.Forms.Button();
+            this.TextBox_QTECrypto = new System.Windows.Forms.TextBox();
+            this.Label_NomCrypto_Acheter = new System.Windows.Forms.Label();
+            this.Label_CurrentAccount = new System.Windows.Forms.Label();
+            this.Panel_DC_Euro = new System.Windows.Forms.Panel();
+            this.Label_HistoriqueTransactions = new System.Windows.Forms.Label();
+            this.dataGridView_HistoriqueTransaction = new System.Windows.Forms.DataGridView();
+            this.idTransaction = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TerminalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WalletName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateTrans = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameDest = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Account = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Chart_RevenuesMois = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.Chart_DepensesMois = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.Label_DC_Solde = new System.Windows.Forms.Label();
+            this.Label_DC_NumeroCompte = new System.Windows.Forms.Label();
+            this.Chart_Depenses = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.Panel_CreationCompte = new System.Windows.Forms.Panel();
+            this.Label_TitreCreationCompte = new System.Windows.Forms.Label();
+            this.Label_ChoixTypeCompte = new System.Windows.Forms.Label();
+            this.Button_ValiderCreationCompte = new System.Windows.Forms.Button();
+            this.ListBox_ChoixTypeCompte = new System.Windows.Forms.ListBox();
+            this.Panel_RDV = new System.Windows.Forms.Panel();
+            this.GroupBox_Conseiller = new System.Windows.Forms.GroupBox();
+            this.Label_Conseiller = new System.Windows.Forms.Label();
+            this.Label_NOMConseiller = new System.Windows.Forms.Label();
+            this.Button_RDVEnvoyer = new System.Windows.Forms.Button();
+            this.RichTextBox_RaisonRDV = new System.Windows.Forms.RichTextBox();
+            this.ListBox_RaisonRDV = new System.Windows.Forms.ListBox();
             this.Panel_ChoixCompte = new System.Windows.Forms.Panel();
             this.Panel_Compte3 = new System.Windows.Forms.Panel();
             this.Label_Solde3 = new System.Windows.Forms.Label();
@@ -99,65 +151,16 @@ namespace Fulbank
             this.Label_MontantVirement = new System.Windows.Forms.Label();
             this.TextBox_MontantVirement = new System.Windows.Forms.TextBox();
             this.ListBox_CompteExpediteur = new System.Windows.Forms.ListBox();
-            this.Panel_DC_Crypto = new System.Windows.Forms.Panel();
-            this.Label_SoldeCrypto = new System.Windows.Forms.Label();
-            this.Button_ValiderCrypto_AchatVente = new System.Windows.Forms.Button();
-            this.Label_Egal_Vendre = new System.Windows.Forms.Label();
-            this.Label_Egal_Acheter = new System.Windows.Forms.Label();
-            this.Label_CryptoEuro_Vendre = new System.Windows.Forms.Label();
-            this.Label_CryptoEuro_Acheter = new System.Windows.Forms.Label();
-            this.Label_NomCrypto_Vendre = new System.Windows.Forms.Label();
-            this.Label_NomCrypto_Acheter = new System.Windows.Forms.Label();
-            this.TextBox_MontantEuro_Vendre = new System.Windows.Forms.TextBox();
-            this.TextBox_MontantEuro_Acheter = new System.Windows.Forms.TextBox();
-            this.TextBox_MontantCrypto_Vendre = new System.Windows.Forms.TextBox();
-            this.TextBox_MontantCrypto_Acheter = new System.Windows.Forms.TextBox();
-            this.Label_VendreCrypto = new System.Windows.Forms.Label();
-            this.Label_AcheterCrypto = new System.Windows.Forms.Label();
-            this.Label_SoldeCryptoTexte = new System.Windows.Forms.Label();
-            this.Label_NumeroWallet = new System.Windows.Forms.Label();
-            this.Label_NomWallet = new System.Windows.Forms.Label();
-            this.Panel_DC_Euro = new System.Windows.Forms.Panel();
-            this.Label_HistoriqueTransactions = new System.Windows.Forms.Label();
-            this.dataGridView_HistoriqueTransaction = new System.Windows.Forms.DataGridView();
-            this.idTransaction = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TerminalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WalletName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateTrans = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameDest = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Account = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Chart_RevenuesMois = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.Chart_DepensesMois = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.Label_DC_Solde = new System.Windows.Forms.Label();
-            this.Label_DC_NumeroCarte = new System.Windows.Forms.Label();
-            this.Label_DC_NumeroCompte = new System.Windows.Forms.Label();
-            this.Label_DC_NomCompte = new System.Windows.Forms.Label();
-            this.Chart_Depenses = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.Panel_CreationCompte = new System.Windows.Forms.Panel();
-            this.Label_TitreCreationCompte = new System.Windows.Forms.Label();
-            this.Label_ChoixForfait = new System.Windows.Forms.Label();
-            this.Label_ChoixTypeCompte = new System.Windows.Forms.Label();
-            this.Button_ValiderCreationCompte = new System.Windows.Forms.Button();
-            this.ListBox_ChoixForfait = new System.Windows.Forms.ListBox();
-            this.ListBox_ChoixTypeCompte = new System.Windows.Forms.ListBox();
-            this.Panel_RDV = new System.Windows.Forms.Panel();
-            this.GroupBox_Conseiller = new System.Windows.Forms.GroupBox();
-            this.Label_Conseiller = new System.Windows.Forms.Label();
-            this.Label_NOMConseiller = new System.Windows.Forms.Label();
-            this.Button_RDVEnvoyer = new System.Windows.Forms.Button();
-            this.RichTextBox_RaisonRDV = new System.Windows.Forms.RichTextBox();
-            this.ListBox_RaisonRDV = new System.Windows.Forms.ListBox();
             this.Label_Role = new System.Windows.Forms.Label();
+            this.listBox_recipientList = new System.Windows.Forms.ListBox();
+            this.button_DeleteRecipient = new System.Windows.Forms.Button();
             this.Panel_EcranEuro.SuspendLayout();
-            this.Panel_ChoixCompte.SuspendLayout();
-            this.Panel_Compte3.SuspendLayout();
-            this.Panel_Compte2.SuspendLayout();
-            this.Panel_Compte1.SuspendLayout();
-            this.Panel_DepotRetrait.SuspendLayout();
-            this.Panel_Virement.SuspendLayout();
+            this.Panel_GererWallet.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_WalletClient)).BeginInit();
             this.Panel_DC_Crypto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Portefeuille)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CoursCrypto)).BeginInit();
+            this.groupBox_Crypto.SuspendLayout();
             this.Panel_DC_Euro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_HistoriqueTransaction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Chart_RevenuesMois)).BeginInit();
@@ -166,6 +169,12 @@ namespace Fulbank
             this.Panel_CreationCompte.SuspendLayout();
             this.Panel_RDV.SuspendLayout();
             this.GroupBox_Conseiller.SuspendLayout();
+            this.Panel_ChoixCompte.SuspendLayout();
+            this.Panel_Compte3.SuspendLayout();
+            this.Panel_Compte2.SuspendLayout();
+            this.Panel_Compte1.SuspendLayout();
+            this.Panel_DepotRetrait.SuspendLayout();
+            this.Panel_Virement.SuspendLayout();
             this.SuspendLayout();
             // 
             // Button_Deconnexion
@@ -210,6 +219,7 @@ namespace Fulbank
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Panel_EcranEuro.AutoScroll = true;
             this.Panel_EcranEuro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(67)))), ((int)(((byte)(153)))));
+            this.Panel_EcranEuro.Controls.Add(this.Button_GererWallet);
             this.Panel_EcranEuro.Controls.Add(this.Button_RDV);
             this.Panel_EcranEuro.Controls.Add(this.Button_AccountCreation);
             this.Panel_EcranEuro.Controls.Add(this.Button_DepotRetrait);
@@ -217,23 +227,38 @@ namespace Fulbank
             this.Panel_EcranEuro.Controls.Add(this.Button_Crypto);
             this.Panel_EcranEuro.Controls.Add(this.Button_Euro);
             this.Panel_EcranEuro.Controls.Add(this.Panel_Virement);
+            this.Panel_EcranEuro.Controls.Add(this.Panel_GererWallet);
             this.Panel_EcranEuro.Controls.Add(this.Panel_DC_Crypto);
             this.Panel_EcranEuro.Controls.Add(this.Panel_DC_Euro);
             this.Panel_EcranEuro.Controls.Add(this.Panel_CreationCompte);
             this.Panel_EcranEuro.Controls.Add(this.Panel_RDV);
             this.Panel_EcranEuro.Controls.Add(this.Panel_ChoixCompte);
             this.Panel_EcranEuro.Controls.Add(this.Panel_DepotRetrait);
-            this.Panel_EcranEuro.Location = new System.Drawing.Point(15, 191);
+            this.Panel_EcranEuro.Location = new System.Drawing.Point(15, 253);
             this.Panel_EcranEuro.Name = "Panel_EcranEuro";
             this.Panel_EcranEuro.Size = new System.Drawing.Size(1330, 483);
             this.Panel_EcranEuro.TabIndex = 3;
+            // 
+            // Button_GererWallet
+            // 
+            this.Button_GererWallet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Button_GererWallet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(114)))), ((int)(((byte)(228)))));
+            this.Button_GererWallet.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Button_GererWallet.Location = new System.Drawing.Point(735, 16);
+            this.Button_GererWallet.Name = "Button_GererWallet";
+            this.Button_GererWallet.Size = new System.Drawing.Size(102, 23);
+            this.Button_GererWallet.TabIndex = 27;
+            this.Button_GererWallet.Text = "Gérer vos Wallet";
+            this.Button_GererWallet.UseVisualStyleBackColor = false;
+            this.Button_GererWallet.Visible = false;
+            this.Button_GererWallet.Click += new System.EventHandler(this.Button_GererWallet_Click);
             // 
             // Button_RDV
             // 
             this.Button_RDV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Button_RDV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(194)))), ((int)(((byte)(236)))));
             this.Button_RDV.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Button_RDV.Location = new System.Drawing.Point(862, 16);
+            this.Button_RDV.Location = new System.Drawing.Point(876, 16);
             this.Button_RDV.Name = "Button_RDV";
             this.Button_RDV.Size = new System.Drawing.Size(102, 23);
             this.Button_RDV.TabIndex = 24;
@@ -246,7 +271,7 @@ namespace Fulbank
             this.Button_AccountCreation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Button_AccountCreation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(194)))), ((int)(((byte)(236)))));
             this.Button_AccountCreation.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Button_AccountCreation.Location = new System.Drawing.Point(988, 16);
+            this.Button_AccountCreation.Location = new System.Drawing.Point(1000, 16);
             this.Button_AccountCreation.Name = "Button_AccountCreation";
             this.Button_AccountCreation.Size = new System.Drawing.Size(102, 23);
             this.Button_AccountCreation.TabIndex = 23;
@@ -259,7 +284,7 @@ namespace Fulbank
             this.Button_DepotRetrait.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Button_DepotRetrait.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(194)))), ((int)(((byte)(236)))));
             this.Button_DepotRetrait.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Button_DepotRetrait.Location = new System.Drawing.Point(1113, 16);
+            this.Button_DepotRetrait.Location = new System.Drawing.Point(1119, 16);
             this.Button_DepotRetrait.Name = "Button_DepotRetrait";
             this.Button_DepotRetrait.Size = new System.Drawing.Size(102, 23);
             this.Button_DepotRetrait.TabIndex = 5;
@@ -272,7 +297,7 @@ namespace Fulbank
             this.Button_Virement.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Button_Virement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(194)))), ((int)(((byte)(236)))));
             this.Button_Virement.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Button_Virement.Location = new System.Drawing.Point(1239, 16);
+            this.Button_Virement.Location = new System.Drawing.Point(1236, 16);
             this.Button_Virement.Name = "Button_Virement";
             this.Button_Virement.Size = new System.Drawing.Size(75, 23);
             this.Button_Virement.TabIndex = 4;
@@ -305,6 +330,600 @@ namespace Fulbank
             this.Button_Euro.UseVisualStyleBackColor = false;
             this.Button_Euro.Click += new System.EventHandler(this.Button_Euro_Click);
             // 
+            // Panel_GererWallet
+            // 
+            this.Panel_GererWallet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Panel_GererWallet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(114)))), ((int)(((byte)(228)))));
+            this.Panel_GererWallet.Controls.Add(this.button_DeleteWallet);
+            this.Panel_GererWallet.Controls.Add(this.button_ChangeName);
+            this.Panel_GererWallet.Controls.Add(this.label_ChangeWalletName);
+            this.Panel_GererWallet.Controls.Add(this.textBox_ChangeWalletName);
+            this.Panel_GererWallet.Controls.Add(this.label_WalletClient);
+            this.Panel_GererWallet.Controls.Add(this.dataGridView_WalletClient);
+            this.Panel_GererWallet.Controls.Add(this.Button_WalletAjout);
+            this.Panel_GererWallet.Controls.Add(this.Label_NomWalletAjout);
+            this.Panel_GererWallet.Controls.Add(this.ListBox_TypeWalletAjout);
+            this.Panel_GererWallet.Controls.Add(this.TextBox_NomWalletAjout);
+            this.Panel_GererWallet.Location = new System.Drawing.Point(14, 56);
+            this.Panel_GererWallet.Name = "Panel_GererWallet";
+            this.Panel_GererWallet.Size = new System.Drawing.Size(1297, 387);
+            this.Panel_GererWallet.TabIndex = 28;
+            this.Panel_GererWallet.Visible = false;
+            // 
+            // button_DeleteWallet
+            // 
+            this.button_DeleteWallet.Location = new System.Drawing.Point(1002, 107);
+            this.button_DeleteWallet.Name = "button_DeleteWallet";
+            this.button_DeleteWallet.Size = new System.Drawing.Size(115, 23);
+            this.button_DeleteWallet.TabIndex = 9;
+            this.button_DeleteWallet.Text = "Supprimer";
+            this.button_DeleteWallet.UseVisualStyleBackColor = true;
+            this.button_DeleteWallet.Click += new System.EventHandler(this.button_DeleteWallet_Click);
+            // 
+            // button_ChangeName
+            // 
+            this.button_ChangeName.Location = new System.Drawing.Point(1002, 68);
+            this.button_ChangeName.Name = "button_ChangeName";
+            this.button_ChangeName.Size = new System.Drawing.Size(115, 23);
+            this.button_ChangeName.TabIndex = 8;
+            this.button_ChangeName.Text = "Changer le nom";
+            this.button_ChangeName.UseVisualStyleBackColor = true;
+            this.button_ChangeName.Click += new System.EventHandler(this.button_ChangeName_Click);
+            // 
+            // label_ChangeWalletName
+            // 
+            this.label_ChangeWalletName.AutoSize = true;
+            this.label_ChangeWalletName.Location = new System.Drawing.Point(879, 50);
+            this.label_ChangeWalletName.Name = "label_ChangeWalletName";
+            this.label_ChangeWalletName.Size = new System.Drawing.Size(78, 13);
+            this.label_ChangeWalletName.TabIndex = 7;
+            this.label_ChangeWalletName.Text = "Modifier le nom";
+            // 
+            // textBox_ChangeWalletName
+            // 
+            this.textBox_ChangeWalletName.Location = new System.Drawing.Point(879, 70);
+            this.textBox_ChangeWalletName.Name = "textBox_ChangeWalletName";
+            this.textBox_ChangeWalletName.Size = new System.Drawing.Size(100, 20);
+            this.textBox_ChangeWalletName.TabIndex = 6;
+            // 
+            // label_WalletClient
+            // 
+            this.label_WalletClient.AutoSize = true;
+            this.label_WalletClient.Location = new System.Drawing.Point(367, 30);
+            this.label_WalletClient.Name = "label_WalletClient";
+            this.label_WalletClient.Size = new System.Drawing.Size(62, 13);
+            this.label_WalletClient.TabIndex = 5;
+            this.label_WalletClient.Text = "Liste Wallet";
+            // 
+            // dataGridView_WalletClient
+            // 
+            this.dataGridView_WalletClient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_WalletClient.Location = new System.Drawing.Point(370, 49);
+            this.dataGridView_WalletClient.Name = "dataGridView_WalletClient";
+            this.dataGridView_WalletClient.Size = new System.Drawing.Size(447, 289);
+            this.dataGridView_WalletClient.TabIndex = 4;
+            this.dataGridView_WalletClient.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_WalletClient_CellClick);
+            // 
+            // Button_WalletAjout
+            // 
+            this.Button_WalletAjout.Location = new System.Drawing.Point(131, 209);
+            this.Button_WalletAjout.Name = "Button_WalletAjout";
+            this.Button_WalletAjout.Size = new System.Drawing.Size(75, 23);
+            this.Button_WalletAjout.TabIndex = 3;
+            this.Button_WalletAjout.Text = "Ajouter";
+            this.Button_WalletAjout.UseVisualStyleBackColor = true;
+            this.Button_WalletAjout.Click += new System.EventHandler(this.Button_WalletAjout_Click);
+            // 
+            // Label_NomWalletAjout
+            // 
+            this.Label_NomWalletAjout.AutoSize = true;
+            this.Label_NomWalletAjout.Location = new System.Drawing.Point(60, 73);
+            this.Label_NomWalletAjout.Name = "Label_NomWalletAjout";
+            this.Label_NomWalletAjout.Size = new System.Drawing.Size(77, 13);
+            this.Label_NomWalletAjout.TabIndex = 2;
+            this.Label_NomWalletAjout.Text = "Nom du Wallet";
+            // 
+            // ListBox_TypeWalletAjout
+            // 
+            this.ListBox_TypeWalletAjout.FormattingEnabled = true;
+            this.ListBox_TypeWalletAjout.Location = new System.Drawing.Point(177, 89);
+            this.ListBox_TypeWalletAjout.Name = "ListBox_TypeWalletAjout";
+            this.ListBox_TypeWalletAjout.Size = new System.Drawing.Size(120, 95);
+            this.ListBox_TypeWalletAjout.TabIndex = 1;
+            // 
+            // TextBox_NomWalletAjout
+            // 
+            this.TextBox_NomWalletAjout.Location = new System.Drawing.Point(63, 89);
+            this.TextBox_NomWalletAjout.Name = "TextBox_NomWalletAjout";
+            this.TextBox_NomWalletAjout.Size = new System.Drawing.Size(100, 20);
+            this.TextBox_NomWalletAjout.TabIndex = 0;
+            // 
+            // Panel_DC_Crypto
+            // 
+            this.Panel_DC_Crypto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Panel_DC_Crypto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(114)))), ((int)(((byte)(228)))));
+            this.Panel_DC_Crypto.Controls.Add(this.Label_TitreData_Droite);
+            this.Panel_DC_Crypto.Controls.Add(this.Label_TitreData_Gauche);
+            this.Panel_DC_Crypto.Controls.Add(this.dataGridView_Portefeuille);
+            this.Panel_DC_Crypto.Controls.Add(this.dataGridView_CoursCrypto);
+            this.Panel_DC_Crypto.Controls.Add(this.groupBox_Crypto);
+            this.Panel_DC_Crypto.Controls.Add(this.Label_CurrentAccount);
+            this.Panel_DC_Crypto.Location = new System.Drawing.Point(14, 56);
+            this.Panel_DC_Crypto.Name = "Panel_DC_Crypto";
+            this.Panel_DC_Crypto.Size = new System.Drawing.Size(1297, 387);
+            this.Panel_DC_Crypto.TabIndex = 22;
+            this.Panel_DC_Crypto.Visible = false;
+            // 
+            // Label_TitreData_Droite
+            // 
+            this.Label_TitreData_Droite.AutoSize = true;
+            this.Label_TitreData_Droite.Location = new System.Drawing.Point(841, 48);
+            this.Label_TitreData_Droite.Name = "Label_TitreData_Droite";
+            this.Label_TitreData_Droite.Size = new System.Drawing.Size(102, 13);
+            this.Label_TitreData_Droite.TabIndex = 21;
+            this.Label_TitreData_Droite.Text = "Contenu Portefeuille";
+            // 
+            // Label_TitreData_Gauche
+            // 
+            this.Label_TitreData_Gauche.AutoSize = true;
+            this.Label_TitreData_Gauche.Location = new System.Drawing.Point(39, 49);
+            this.Label_TitreData_Gauche.Name = "Label_TitreData_Gauche";
+            this.Label_TitreData_Gauche.Size = new System.Drawing.Size(67, 13);
+            this.Label_TitreData_Gauche.TabIndex = 20;
+            this.Label_TitreData_Gauche.Text = "Cours Crypto";
+            // 
+            // dataGridView_Portefeuille
+            // 
+            this.dataGridView_Portefeuille.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Portefeuille.Location = new System.Drawing.Point(839, 65);
+            this.dataGridView_Portefeuille.Name = "dataGridView_Portefeuille";
+            this.dataGridView_Portefeuille.Size = new System.Drawing.Size(434, 284);
+            this.dataGridView_Portefeuille.TabIndex = 19;
+            this.dataGridView_Portefeuille.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Portefeuille_CellContentClick_1);
+            // 
+            // dataGridView_CoursCrypto
+            // 
+            this.dataGridView_CoursCrypto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_CoursCrypto.Location = new System.Drawing.Point(35, 65);
+            this.dataGridView_CoursCrypto.Name = "dataGridView_CoursCrypto";
+            this.dataGridView_CoursCrypto.Size = new System.Drawing.Size(386, 284);
+            this.dataGridView_CoursCrypto.TabIndex = 18;
+            this.dataGridView_CoursCrypto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CoursCrypto_CellClick);
+            // 
+            // groupBox_Crypto
+            // 
+            this.groupBox_Crypto.Controls.Add(this.Button_ValiderCrypto_Vente);
+            this.groupBox_Crypto.Controls.Add(this.Button_ValiderCrypto_Achat);
+            this.groupBox_Crypto.Controls.Add(this.TextBox_QTECrypto);
+            this.groupBox_Crypto.Controls.Add(this.Label_NomCrypto_Acheter);
+            this.groupBox_Crypto.Location = new System.Drawing.Point(466, 73);
+            this.groupBox_Crypto.Name = "groupBox_Crypto";
+            this.groupBox_Crypto.Size = new System.Drawing.Size(332, 246);
+            this.groupBox_Crypto.TabIndex = 17;
+            this.groupBox_Crypto.TabStop = false;
+            // 
+            // Button_ValiderCrypto_Vente
+            // 
+            this.Button_ValiderCrypto_Vente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(52)))), ((int)(((byte)(228)))));
+            this.Button_ValiderCrypto_Vente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Button_ValiderCrypto_Vente.Location = new System.Drawing.Point(164, 138);
+            this.Button_ValiderCrypto_Vente.Name = "Button_ValiderCrypto_Vente";
+            this.Button_ValiderCrypto_Vente.Size = new System.Drawing.Size(75, 23);
+            this.Button_ValiderCrypto_Vente.TabIndex = 16;
+            this.Button_ValiderCrypto_Vente.Text = "Vendre";
+            this.Button_ValiderCrypto_Vente.UseVisualStyleBackColor = false;
+            this.Button_ValiderCrypto_Vente.Click += new System.EventHandler(this.Button_ValiderCrypto_Vente_Click);
+            // 
+            // Button_ValiderCrypto_Achat
+            // 
+            this.Button_ValiderCrypto_Achat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(52)))), ((int)(((byte)(228)))));
+            this.Button_ValiderCrypto_Achat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Button_ValiderCrypto_Achat.Location = new System.Drawing.Point(76, 138);
+            this.Button_ValiderCrypto_Achat.Name = "Button_ValiderCrypto_Achat";
+            this.Button_ValiderCrypto_Achat.Size = new System.Drawing.Size(75, 23);
+            this.Button_ValiderCrypto_Achat.TabIndex = 15;
+            this.Button_ValiderCrypto_Achat.Text = "Acheter";
+            this.Button_ValiderCrypto_Achat.UseVisualStyleBackColor = false;
+            this.Button_ValiderCrypto_Achat.Click += new System.EventHandler(this.Button_ValiderCrypto_Achat_Click);
+            // 
+            // TextBox_QTECrypto
+            // 
+            this.TextBox_QTECrypto.Location = new System.Drawing.Point(113, 91);
+            this.TextBox_QTECrypto.Name = "TextBox_QTECrypto";
+            this.TextBox_QTECrypto.Size = new System.Drawing.Size(100, 20);
+            this.TextBox_QTECrypto.TabIndex = 5;
+            // 
+            // Label_NomCrypto_Acheter
+            // 
+            this.Label_NomCrypto_Acheter.AutoSize = true;
+            this.Label_NomCrypto_Acheter.Location = new System.Drawing.Point(148, 68);
+            this.Label_NomCrypto_Acheter.Name = "Label_NomCrypto_Acheter";
+            this.Label_NomCrypto_Acheter.Size = new System.Drawing.Size(29, 13);
+            this.Label_NomCrypto_Acheter.TabIndex = 9;
+            this.Label_NomCrypto_Acheter.Text = "QTE";
+            // 
+            // Label_CurrentAccount
+            // 
+            this.Label_CurrentAccount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Label_CurrentAccount.AutoSize = true;
+            this.Label_CurrentAccount.ForeColor = System.Drawing.Color.White;
+            this.Label_CurrentAccount.Location = new System.Drawing.Point(463, 59);
+            this.Label_CurrentAccount.Name = "Label_CurrentAccount";
+            this.Label_CurrentAccount.Size = new System.Drawing.Size(123, 13);
+            this.Label_CurrentAccount.TabIndex = 0;
+            this.Label_CurrentAccount.Text = "Solde compte courrant : ";
+            this.Label_CurrentAccount.Visible = false;
+            // 
+            // Panel_DC_Euro
+            // 
+            this.Panel_DC_Euro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Panel_DC_Euro.AutoScroll = true;
+            this.Panel_DC_Euro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(194)))), ((int)(((byte)(236)))));
+            this.Panel_DC_Euro.Controls.Add(this.Label_HistoriqueTransactions);
+            this.Panel_DC_Euro.Controls.Add(this.dataGridView_HistoriqueTransaction);
+            this.Panel_DC_Euro.Controls.Add(this.Chart_RevenuesMois);
+            this.Panel_DC_Euro.Controls.Add(this.Chart_DepensesMois);
+            this.Panel_DC_Euro.Controls.Add(this.Label_DC_Solde);
+            this.Panel_DC_Euro.Controls.Add(this.Label_DC_NumeroCompte);
+            this.Panel_DC_Euro.Controls.Add(this.Chart_Depenses);
+            this.Panel_DC_Euro.Location = new System.Drawing.Point(14, 56);
+            this.Panel_DC_Euro.Margin = new System.Windows.Forms.Padding(2);
+            this.Panel_DC_Euro.Name = "Panel_DC_Euro";
+            this.Panel_DC_Euro.Size = new System.Drawing.Size(1297, 387);
+            this.Panel_DC_Euro.TabIndex = 21;
+            this.Panel_DC_Euro.Visible = false;
+            // 
+            // Label_HistoriqueTransactions
+            // 
+            this.Label_HistoriqueTransactions.AutoSize = true;
+            this.Label_HistoriqueTransactions.Location = new System.Drawing.Point(128, 46);
+            this.Label_HistoriqueTransactions.Name = "Label_HistoriqueTransactions";
+            this.Label_HistoriqueTransactions.Size = new System.Drawing.Size(138, 13);
+            this.Label_HistoriqueTransactions.TabIndex = 9;
+            this.Label_HistoriqueTransactions.Text = "Historique des Transactions";
+            // 
+            // dataGridView_HistoriqueTransaction
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Transparent;
+            this.dataGridView_HistoriqueTransaction.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView_HistoriqueTransaction.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_HistoriqueTransaction.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView_HistoriqueTransaction.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(67)))), ((int)(((byte)(153)))));
+            this.dataGridView_HistoriqueTransaction.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView_HistoriqueTransaction.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView_HistoriqueTransaction.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(67)))), ((int)(((byte)(153)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_HistoriqueTransaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView_HistoriqueTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_HistoriqueTransaction.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idTransaction,
+            this.TerminalName,
+            this.WalletName,
+            this.Amount,
+            this.DateTrans,
+            this.Action,
+            this.NameDest,
+            this.Account});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(67)))), ((int)(((byte)(153)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_HistoriqueTransaction.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView_HistoriqueTransaction.GridColor = System.Drawing.Color.Black;
+            this.dataGridView_HistoriqueTransaction.Location = new System.Drawing.Point(125, 69);
+            this.dataGridView_HistoriqueTransaction.Name = "dataGridView_HistoriqueTransaction";
+            this.dataGridView_HistoriqueTransaction.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView_HistoriqueTransaction.RowHeadersVisible = false;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            this.dataGridView_HistoriqueTransaction.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView_HistoriqueTransaction.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(67)))), ((int)(((byte)(153)))));
+            this.dataGridView_HistoriqueTransaction.Size = new System.Drawing.Size(1097, 292);
+            this.dataGridView_HistoriqueTransaction.TabIndex = 8;
+            // 
+            // idTransaction
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.idTransaction.DefaultCellStyle = dataGridViewCellStyle3;
+            this.idTransaction.HeaderText = "Numéro Transaction";
+            this.idTransaction.Name = "idTransaction";
+            this.idTransaction.Visible = false;
+            // 
+            // TerminalName
+            // 
+            this.TerminalName.HeaderText = "Nom Terminal";
+            this.TerminalName.Name = "TerminalName";
+            this.TerminalName.Visible = false;
+            // 
+            // WalletName
+            // 
+            this.WalletName.HeaderText = "Nom Wallet";
+            this.WalletName.Name = "WalletName";
+            this.WalletName.Visible = false;
+            // 
+            // Amount
+            // 
+            this.Amount.HeaderText = "Montant";
+            this.Amount.Name = "Amount";
+            this.Amount.Visible = false;
+            // 
+            // DateTrans
+            // 
+            this.DateTrans.HeaderText = "Date Oppération";
+            this.DateTrans.Name = "DateTrans";
+            this.DateTrans.Visible = false;
+            // 
+            // Action
+            // 
+            this.Action.HeaderText = "Action";
+            this.Action.Name = "Action";
+            this.Action.Visible = false;
+            // 
+            // NameDest
+            // 
+            this.NameDest.HeaderText = "Nom destinataire";
+            this.NameDest.Name = "NameDest";
+            this.NameDest.Visible = false;
+            // 
+            // Account
+            // 
+            this.Account.HeaderText = "Nom Compte";
+            this.Account.Name = "Account";
+            this.Account.Visible = false;
+            // 
+            // Chart_RevenuesMois
+            // 
+            this.Chart_RevenuesMois.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea1.Name = "ChartArea1";
+            this.Chart_RevenuesMois.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.Chart_RevenuesMois.Legends.Add(legend1);
+            this.Chart_RevenuesMois.Location = new System.Drawing.Point(558, 1241);
+            this.Chart_RevenuesMois.Name = "Chart_RevenuesMois";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.Chart_RevenuesMois.Series.Add(series1);
+            this.Chart_RevenuesMois.Size = new System.Drawing.Size(263, 300);
+            this.Chart_RevenuesMois.TabIndex = 7;
+            this.Chart_RevenuesMois.Text = "Dépenses";
+            // 
+            // Chart_DepensesMois
+            // 
+            this.Chart_DepensesMois.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea2.Name = "ChartArea1";
+            this.Chart_DepensesMois.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.Chart_DepensesMois.Legends.Add(legend2);
+            this.Chart_DepensesMois.Location = new System.Drawing.Point(408, 806);
+            this.Chart_DepensesMois.Margin = new System.Windows.Forms.Padding(2);
+            this.Chart_DepensesMois.Name = "Chart_DepensesMois";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.Chart_DepensesMois.Series.Add(series2);
+            this.Chart_DepensesMois.Size = new System.Drawing.Size(615, 322);
+            this.Chart_DepensesMois.TabIndex = 6;
+            this.Chart_DepensesMois.Text = "Dépense";
+            // 
+            // Label_DC_Solde
+            // 
+            this.Label_DC_Solde.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Label_DC_Solde.AutoSize = true;
+            this.Label_DC_Solde.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(67)))), ((int)(((byte)(153)))));
+            this.Label_DC_Solde.ForeColor = System.Drawing.Color.White;
+            this.Label_DC_Solde.Location = new System.Drawing.Point(568, 210);
+            this.Label_DC_Solde.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label_DC_Solde.Name = "Label_DC_Solde";
+            this.Label_DC_Solde.Size = new System.Drawing.Size(34, 13);
+            this.Label_DC_Solde.TabIndex = 4;
+            this.Label_DC_Solde.Text = "Solde";
+            // 
+            // Label_DC_NumeroCompte
+            // 
+            this.Label_DC_NumeroCompte.AutoSize = true;
+            this.Label_DC_NumeroCompte.ForeColor = System.Drawing.Color.White;
+            this.Label_DC_NumeroCompte.Location = new System.Drawing.Point(2, 3);
+            this.Label_DC_NumeroCompte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label_DC_NumeroCompte.Name = "Label_DC_NumeroCompte";
+            this.Label_DC_NumeroCompte.Size = new System.Drawing.Size(64, 13);
+            this.Label_DC_NumeroCompte.TabIndex = 1;
+            this.Label_DC_NumeroCompte.Text = "N° Compte: ";
+            // 
+            // Chart_Depenses
+            // 
+            this.Chart_Depenses.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Chart_Depenses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(67)))), ((int)(((byte)(153)))));
+            this.Chart_Depenses.BorderlineColor = System.Drawing.Color.Transparent;
+            chartArea3.AlignmentOrientation = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.None;
+            chartArea3.BackColor = System.Drawing.Color.Transparent;
+            chartArea3.Name = "ChartArea1";
+            this.Chart_Depenses.ChartAreas.Add(chartArea3);
+            legend3.BackColor = System.Drawing.Color.Transparent;
+            legend3.Name = "Legend1";
+            this.Chart_Depenses.Legends.Add(legend3);
+            this.Chart_Depenses.Location = new System.Drawing.Point(261, 418);
+            this.Chart_Depenses.Margin = new System.Windows.Forms.Padding(2);
+            this.Chart_Depenses.Name = "Chart_Depenses";
+            this.Chart_Depenses.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series3.Legend = "Legend1";
+            series3.Name = "Dépenses";
+            dataPoint1.AxisLabel = "";
+            dataPoint1.Label = "Voiture \\n#PERCENT";
+            dataPoint2.AxisLabel = "";
+            dataPoint2.Label = "Course \\n#PERCENT";
+            dataPoint3.AxisLabel = "";
+            dataPoint3.Label = "Voyage \\n#PERCENT";
+            series3.Points.Add(dataPoint1);
+            series3.Points.Add(dataPoint2);
+            series3.Points.Add(dataPoint3);
+            this.Chart_Depenses.Series.Add(series3);
+            this.Chart_Depenses.Size = new System.Drawing.Size(762, 328);
+            this.Chart_Depenses.TabIndex = 2;
+            this.Chart_Depenses.Text = "Dépenses";
+            title1.ForeColor = System.Drawing.Color.White;
+            title1.Name = "Dépenses";
+            title1.Text = "Dépenses";
+            this.Chart_Depenses.Titles.Add(title1);
+            // 
+            // Panel_CreationCompte
+            // 
+            this.Panel_CreationCompte.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Panel_CreationCompte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(194)))), ((int)(((byte)(236)))));
+            this.Panel_CreationCompte.Controls.Add(this.Label_TitreCreationCompte);
+            this.Panel_CreationCompte.Controls.Add(this.Label_ChoixTypeCompte);
+            this.Panel_CreationCompte.Controls.Add(this.Button_ValiderCreationCompte);
+            this.Panel_CreationCompte.Controls.Add(this.ListBox_ChoixTypeCompte);
+            this.Panel_CreationCompte.Location = new System.Drawing.Point(14, 56);
+            this.Panel_CreationCompte.Name = "Panel_CreationCompte";
+            this.Panel_CreationCompte.Size = new System.Drawing.Size(1297, 387);
+            this.Panel_CreationCompte.TabIndex = 25;
+            this.Panel_CreationCompte.Visible = false;
+            // 
+            // Label_TitreCreationCompte
+            // 
+            this.Label_TitreCreationCompte.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Label_TitreCreationCompte.AutoSize = true;
+            this.Label_TitreCreationCompte.BackColor = System.Drawing.Color.Transparent;
+            this.Label_TitreCreationCompte.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_TitreCreationCompte.ForeColor = System.Drawing.Color.White;
+            this.Label_TitreCreationCompte.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Label_TitreCreationCompte.Location = new System.Drawing.Point(555, 13);
+            this.Label_TitreCreationCompte.Name = "Label_TitreCreationCompte";
+            this.Label_TitreCreationCompte.Size = new System.Drawing.Size(277, 39);
+            this.Label_TitreCreationCompte.TabIndex = 29;
+            this.Label_TitreCreationCompte.Text = "Créer un Compte";
+            this.Label_TitreCreationCompte.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Label_ChoixTypeCompte
+            // 
+            this.Label_ChoixTypeCompte.AutoSize = true;
+            this.Label_ChoixTypeCompte.Location = new System.Drawing.Point(630, 137);
+            this.Label_ChoixTypeCompte.Name = "Label_ChoixTypeCompte";
+            this.Label_ChoixTypeCompte.Size = new System.Drawing.Size(72, 13);
+            this.Label_ChoixTypeCompte.TabIndex = 3;
+            this.Label_ChoixTypeCompte.Text = "Choix Compte";
+            // 
+            // Button_ValiderCreationCompte
+            // 
+            this.Button_ValiderCreationCompte.Location = new System.Drawing.Point(630, 290);
+            this.Button_ValiderCreationCompte.Name = "Button_ValiderCreationCompte";
+            this.Button_ValiderCreationCompte.Size = new System.Drawing.Size(75, 23);
+            this.Button_ValiderCreationCompte.TabIndex = 2;
+            this.Button_ValiderCreationCompte.Text = "Valider";
+            this.Button_ValiderCreationCompte.UseVisualStyleBackColor = true;
+            this.Button_ValiderCreationCompte.Click += new System.EventHandler(this.Button_ValiderCreationCompte_Click_1);
+            // 
+            // ListBox_ChoixTypeCompte
+            // 
+            this.ListBox_ChoixTypeCompte.FormattingEnabled = true;
+            this.ListBox_ChoixTypeCompte.Items.AddRange(new object[] {
+            "Compte Courant",
+            "Compte Epargne"});
+            this.ListBox_ChoixTypeCompte.Location = new System.Drawing.Point(607, 167);
+            this.ListBox_ChoixTypeCompte.Name = "ListBox_ChoixTypeCompte";
+            this.ListBox_ChoixTypeCompte.Size = new System.Drawing.Size(120, 95);
+            this.ListBox_ChoixTypeCompte.TabIndex = 0;
+            // 
+            // Panel_RDV
+            // 
+            this.Panel_RDV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Panel_RDV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(194)))), ((int)(((byte)(236)))));
+            this.Panel_RDV.Controls.Add(this.GroupBox_Conseiller);
+            this.Panel_RDV.Controls.Add(this.Button_RDVEnvoyer);
+            this.Panel_RDV.Controls.Add(this.RichTextBox_RaisonRDV);
+            this.Panel_RDV.Controls.Add(this.ListBox_RaisonRDV);
+            this.Panel_RDV.Location = new System.Drawing.Point(14, 56);
+            this.Panel_RDV.Name = "Panel_RDV";
+            this.Panel_RDV.Size = new System.Drawing.Size(1297, 387);
+            this.Panel_RDV.TabIndex = 26;
+            this.Panel_RDV.Visible = false;
+            // 
+            // GroupBox_Conseiller
+            // 
+            this.GroupBox_Conseiller.AutoSize = true;
+            this.GroupBox_Conseiller.BackColor = System.Drawing.Color.Transparent;
+            this.GroupBox_Conseiller.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.GroupBox_Conseiller.Controls.Add(this.Label_Conseiller);
+            this.GroupBox_Conseiller.Controls.Add(this.Label_NOMConseiller);
+            this.GroupBox_Conseiller.Cursor = System.Windows.Forms.Cursors.Default;
+            this.GroupBox_Conseiller.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GroupBox_Conseiller.Location = new System.Drawing.Point(394, 46);
+            this.GroupBox_Conseiller.Name = "GroupBox_Conseiller";
+            this.GroupBox_Conseiller.Size = new System.Drawing.Size(191, 53);
+            this.GroupBox_Conseiller.TabIndex = 5;
+            this.GroupBox_Conseiller.TabStop = false;
+            // 
+            // Label_Conseiller
+            // 
+            this.Label_Conseiller.AutoSize = true;
+            this.Label_Conseiller.Location = new System.Drawing.Point(2, 24);
+            this.Label_Conseiller.Name = "Label_Conseiller";
+            this.Label_Conseiller.Size = new System.Drawing.Size(85, 13);
+            this.Label_Conseiller.TabIndex = 0;
+            this.Label_Conseiller.Text = "Votre conseiller :";
+            // 
+            // Label_NOMConseiller
+            // 
+            this.Label_NOMConseiller.AutoSize = true;
+            this.Label_NOMConseiller.Location = new System.Drawing.Point(86, 24);
+            this.Label_NOMConseiller.Name = "Label_NOMConseiller";
+            this.Label_NOMConseiller.Size = new System.Drawing.Size(99, 13);
+            this.Label_NOMConseiller.TabIndex = 1;
+            this.Label_NOMConseiller.Text = "NOMCONSEILLER";
+            // 
+            // Button_RDVEnvoyer
+            // 
+            this.Button_RDVEnvoyer.Location = new System.Drawing.Point(450, 306);
+            this.Button_RDVEnvoyer.Name = "Button_RDVEnvoyer";
+            this.Button_RDVEnvoyer.Size = new System.Drawing.Size(75, 23);
+            this.Button_RDVEnvoyer.TabIndex = 4;
+            this.Button_RDVEnvoyer.Text = "Envoyer";
+            this.Button_RDVEnvoyer.UseVisualStyleBackColor = true;
+            this.Button_RDVEnvoyer.Click += new System.EventHandler(this.Button_RDVEnvoyer_Click);
+            // 
+            // RichTextBox_RaisonRDV
+            // 
+            this.RichTextBox_RaisonRDV.Location = new System.Drawing.Point(299, 190);
+            this.RichTextBox_RaisonRDV.MaxLength = 255;
+            this.RichTextBox_RaisonRDV.Name = "RichTextBox_RaisonRDV";
+            this.RichTextBox_RaisonRDV.Size = new System.Drawing.Size(352, 91);
+            this.RichTextBox_RaisonRDV.TabIndex = 3;
+            this.RichTextBox_RaisonRDV.Text = "";
+            // 
+            // ListBox_RaisonRDV
+            // 
+            this.ListBox_RaisonRDV.FormattingEnabled = true;
+            this.ListBox_RaisonRDV.Items.AddRange(new object[] {
+            "Liste raison"});
+            this.ListBox_RaisonRDV.Location = new System.Drawing.Point(404, 117);
+            this.ListBox_RaisonRDV.Name = "ListBox_RaisonRDV";
+            this.ListBox_RaisonRDV.Size = new System.Drawing.Size(159, 56);
+            this.ListBox_RaisonRDV.TabIndex = 2;
+            // 
             // Panel_ChoixCompte
             // 
             this.Panel_ChoixCompte.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -315,7 +934,7 @@ namespace Fulbank
             this.Panel_ChoixCompte.Controls.Add(this.Panel_Compte1);
             this.Panel_ChoixCompte.Location = new System.Drawing.Point(14, 56);
             this.Panel_ChoixCompte.Name = "Panel_ChoixCompte";
-            this.Panel_ChoixCompte.Size = new System.Drawing.Size(1300, 387);
+            this.Panel_ChoixCompte.Size = new System.Drawing.Size(1297, 387);
             this.Panel_ChoixCompte.TabIndex = 7;
             // 
             // Panel_Compte3
@@ -376,6 +995,7 @@ namespace Fulbank
             this.Label_NomCompte3.TabIndex = 4;
             this.Label_NomCompte3.Text = "NomCompte";
             this.Label_NomCompte3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label_NomCompte3.Click += new System.EventHandler(this.Label_NomCompte3_Click);
             // 
             // Label_NumeroCompte3
             // 
@@ -446,6 +1066,7 @@ namespace Fulbank
             this.Label_NomCompte2.TabIndex = 4;
             this.Label_NomCompte2.Text = "NomCompte";
             this.Label_NomCompte2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label_NomCompte2.Click += new System.EventHandler(this.Label_NomCompte2_Click);
             // 
             // Label_NumeroCompte2
             // 
@@ -543,7 +1164,7 @@ namespace Fulbank
             this.Panel_DepotRetrait.Controls.Add(this.ListBox_Compte);
             this.Panel_DepotRetrait.Location = new System.Drawing.Point(14, 56);
             this.Panel_DepotRetrait.Name = "Panel_DepotRetrait";
-            this.Panel_DepotRetrait.Size = new System.Drawing.Size(1300, 387);
+            this.Panel_DepotRetrait.Size = new System.Drawing.Size(1297, 387);
             this.Panel_DepotRetrait.TabIndex = 6;
             this.Panel_DepotRetrait.Visible = false;
             // 
@@ -640,6 +1261,8 @@ namespace Fulbank
             this.Panel_Virement.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Panel_Virement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(194)))), ((int)(((byte)(236)))));
+            this.Panel_Virement.Controls.Add(this.button_DeleteRecipient);
+            this.Panel_Virement.Controls.Add(this.listBox_recipientList);
             this.Panel_Virement.Controls.Add(this.Label_TitreVirement);
             this.Panel_Virement.Controls.Add(this.Label_AjouterNom);
             this.Panel_Virement.Controls.Add(this.Button_Ajouter);
@@ -655,7 +1278,7 @@ namespace Fulbank
             this.Panel_Virement.Controls.Add(this.ListBox_CompteExpediteur);
             this.Panel_Virement.Location = new System.Drawing.Point(14, 56);
             this.Panel_Virement.Name = "Panel_Virement";
-            this.Panel_Virement.Size = new System.Drawing.Size(1300, 387);
+            this.Panel_Virement.Size = new System.Drawing.Size(1291, 387);
             this.Panel_Virement.TabIndex = 20;
             this.Panel_Virement.Visible = false;
             // 
@@ -740,14 +1363,14 @@ namespace Fulbank
             this.ListBox_CompteDestinataire.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ListBox_CompteDestinataire.Cursor = System.Windows.Forms.Cursors.Default;
             this.ListBox_CompteDestinataire.FormattingEnabled = true;
-            this.ListBox_CompteDestinataire.Location = new System.Drawing.Point(404, 193);
+            this.ListBox_CompteDestinataire.Location = new System.Drawing.Point(370, 188);
             this.ListBox_CompteDestinataire.Name = "ListBox_CompteDestinataire";
-            this.ListBox_CompteDestinataire.Size = new System.Drawing.Size(121, 93);
+            this.ListBox_CompteDestinataire.Size = new System.Drawing.Size(161, 93);
             this.ListBox_CompteDestinataire.TabIndex = 20;
             // 
             // Button_ValiderVirement
             // 
-            this.Button_ValiderVirement.Location = new System.Drawing.Point(252, 243);
+            this.Button_ValiderVirement.Location = new System.Drawing.Point(261, 239);
             this.Button_ValiderVirement.Name = "Button_ValiderVirement";
             this.Button_ValiderVirement.Size = new System.Drawing.Size(75, 23);
             this.Button_ValiderVirement.TabIndex = 19;
@@ -766,7 +1389,7 @@ namespace Fulbank
             // 
             // TextBox_MontantVirement
             // 
-            this.TextBox_MontantVirement.Location = new System.Drawing.Point(238, 210);
+            this.TextBox_MontantVirement.Location = new System.Drawing.Point(247, 210);
             this.TextBox_MontantVirement.Name = "TextBox_MontantVirement";
             this.TextBox_MontantVirement.Size = new System.Drawing.Size(100, 20);
             this.TextBox_MontantVirement.TabIndex = 15;
@@ -776,607 +1399,11 @@ namespace Fulbank
             this.ListBox_CompteExpediteur.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ListBox_CompteExpediteur.Cursor = System.Windows.Forms.Cursors.Default;
             this.ListBox_CompteExpediteur.FormattingEnabled = true;
-            this.ListBox_CompteExpediteur.Location = new System.Drawing.Point(83, 191);
+            this.ListBox_CompteExpediteur.Location = new System.Drawing.Point(57, 190);
             this.ListBox_CompteExpediteur.Name = "ListBox_CompteExpediteur";
-            this.ListBox_CompteExpediteur.Size = new System.Drawing.Size(112, 93);
+            this.ListBox_CompteExpediteur.Size = new System.Drawing.Size(161, 93);
             this.ListBox_CompteExpediteur.TabIndex = 14;
             this.ListBox_CompteExpediteur.SelectedIndexChanged += new System.EventHandler(this.ListBox_CompteExpediteur_SelectedIndexChanged);
-            // 
-            // Panel_DC_Crypto
-            // 
-            this.Panel_DC_Crypto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Panel_DC_Crypto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(114)))), ((int)(((byte)(228)))));
-            this.Panel_DC_Crypto.Controls.Add(this.Label_SoldeCrypto);
-            this.Panel_DC_Crypto.Controls.Add(this.Button_ValiderCrypto_AchatVente);
-            this.Panel_DC_Crypto.Controls.Add(this.Label_Egal_Vendre);
-            this.Panel_DC_Crypto.Controls.Add(this.Label_Egal_Acheter);
-            this.Panel_DC_Crypto.Controls.Add(this.Label_CryptoEuro_Vendre);
-            this.Panel_DC_Crypto.Controls.Add(this.Label_CryptoEuro_Acheter);
-            this.Panel_DC_Crypto.Controls.Add(this.Label_NomCrypto_Vendre);
-            this.Panel_DC_Crypto.Controls.Add(this.Label_NomCrypto_Acheter);
-            this.Panel_DC_Crypto.Controls.Add(this.TextBox_MontantEuro_Vendre);
-            this.Panel_DC_Crypto.Controls.Add(this.TextBox_MontantEuro_Acheter);
-            this.Panel_DC_Crypto.Controls.Add(this.TextBox_MontantCrypto_Vendre);
-            this.Panel_DC_Crypto.Controls.Add(this.TextBox_MontantCrypto_Acheter);
-            this.Panel_DC_Crypto.Controls.Add(this.Label_VendreCrypto);
-            this.Panel_DC_Crypto.Controls.Add(this.Label_AcheterCrypto);
-            this.Panel_DC_Crypto.Controls.Add(this.Label_SoldeCryptoTexte);
-            this.Panel_DC_Crypto.Controls.Add(this.Label_NumeroWallet);
-            this.Panel_DC_Crypto.Controls.Add(this.Label_NomWallet);
-            this.Panel_DC_Crypto.Location = new System.Drawing.Point(14, 56);
-            this.Panel_DC_Crypto.Name = "Panel_DC_Crypto";
-            this.Panel_DC_Crypto.Size = new System.Drawing.Size(1300, 387);
-            this.Panel_DC_Crypto.TabIndex = 22;
-            this.Panel_DC_Crypto.Visible = false;
-            // 
-            // Label_SoldeCrypto
-            // 
-            this.Label_SoldeCrypto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Label_SoldeCrypto.AutoSize = true;
-            this.Label_SoldeCrypto.ForeColor = System.Drawing.Color.White;
-            this.Label_SoldeCrypto.Location = new System.Drawing.Point(1280, 4);
-            this.Label_SoldeCrypto.Name = "Label_SoldeCrypto";
-            this.Label_SoldeCrypto.Size = new System.Drawing.Size(13, 13);
-            this.Label_SoldeCrypto.TabIndex = 16;
-            this.Label_SoldeCrypto.Text = "1";
-            // 
-            // Button_ValiderCrypto_AchatVente
-            // 
-            this.Button_ValiderCrypto_AchatVente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(52)))), ((int)(((byte)(228)))));
-            this.Button_ValiderCrypto_AchatVente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Button_ValiderCrypto_AchatVente.Location = new System.Drawing.Point(1087, 261);
-            this.Button_ValiderCrypto_AchatVente.Name = "Button_ValiderCrypto_AchatVente";
-            this.Button_ValiderCrypto_AchatVente.Size = new System.Drawing.Size(75, 23);
-            this.Button_ValiderCrypto_AchatVente.TabIndex = 15;
-            this.Button_ValiderCrypto_AchatVente.Text = "Valider";
-            this.Button_ValiderCrypto_AchatVente.UseVisualStyleBackColor = false;
-            // 
-            // Label_Egal_Vendre
-            // 
-            this.Label_Egal_Vendre.AutoSize = true;
-            this.Label_Egal_Vendre.Location = new System.Drawing.Point(1206, 165);
-            this.Label_Egal_Vendre.Name = "Label_Egal_Vendre";
-            this.Label_Egal_Vendre.Size = new System.Drawing.Size(13, 13);
-            this.Label_Egal_Vendre.TabIndex = 14;
-            this.Label_Egal_Vendre.Text = "=";
-            // 
-            // Label_Egal_Acheter
-            // 
-            this.Label_Egal_Acheter.AutoSize = true;
-            this.Label_Egal_Acheter.Location = new System.Drawing.Point(1033, 165);
-            this.Label_Egal_Acheter.Name = "Label_Egal_Acheter";
-            this.Label_Egal_Acheter.Size = new System.Drawing.Size(13, 13);
-            this.Label_Egal_Acheter.TabIndex = 13;
-            this.Label_Egal_Acheter.Text = "=";
-            // 
-            // Label_CryptoEuro_Vendre
-            // 
-            this.Label_CryptoEuro_Vendre.AutoSize = true;
-            this.Label_CryptoEuro_Vendre.Location = new System.Drawing.Point(1265, 190);
-            this.Label_CryptoEuro_Vendre.Name = "Label_CryptoEuro_Vendre";
-            this.Label_CryptoEuro_Vendre.Size = new System.Drawing.Size(13, 13);
-            this.Label_CryptoEuro_Vendre.TabIndex = 12;
-            this.Label_CryptoEuro_Vendre.Text = "€";
-            // 
-            // Label_CryptoEuro_Acheter
-            // 
-            this.Label_CryptoEuro_Acheter.AutoSize = true;
-            this.Label_CryptoEuro_Acheter.Location = new System.Drawing.Point(1096, 190);
-            this.Label_CryptoEuro_Acheter.Name = "Label_CryptoEuro_Acheter";
-            this.Label_CryptoEuro_Acheter.Size = new System.Drawing.Size(13, 13);
-            this.Label_CryptoEuro_Acheter.TabIndex = 11;
-            this.Label_CryptoEuro_Acheter.Text = "€";
-            // 
-            // Label_NomCrypto_Vendre
-            // 
-            this.Label_NomCrypto_Vendre.AutoSize = true;
-            this.Label_NomCrypto_Vendre.Location = new System.Drawing.Point(1265, 140);
-            this.Label_NomCrypto_Vendre.Name = "Label_NomCrypto_Vendre";
-            this.Label_NomCrypto_Vendre.Size = new System.Drawing.Size(28, 13);
-            this.Label_NomCrypto_Vendre.TabIndex = 10;
-            this.Label_NomCrypto_Vendre.Text = "BTC";
-            // 
-            // Label_NomCrypto_Acheter
-            // 
-            this.Label_NomCrypto_Acheter.AutoSize = true;
-            this.Label_NomCrypto_Acheter.Location = new System.Drawing.Point(1096, 141);
-            this.Label_NomCrypto_Acheter.Name = "Label_NomCrypto_Acheter";
-            this.Label_NomCrypto_Acheter.Size = new System.Drawing.Size(28, 13);
-            this.Label_NomCrypto_Acheter.TabIndex = 9;
-            this.Label_NomCrypto_Acheter.Text = "BTC";
-            // 
-            // TextBox_MontantEuro_Vendre
-            // 
-            this.TextBox_MontantEuro_Vendre.Location = new System.Drawing.Point(1159, 187);
-            this.TextBox_MontantEuro_Vendre.Name = "TextBox_MontantEuro_Vendre";
-            this.TextBox_MontantEuro_Vendre.Size = new System.Drawing.Size(100, 20);
-            this.TextBox_MontantEuro_Vendre.TabIndex = 8;
-            // 
-            // TextBox_MontantEuro_Acheter
-            // 
-            this.TextBox_MontantEuro_Acheter.Location = new System.Drawing.Point(990, 187);
-            this.TextBox_MontantEuro_Acheter.Name = "TextBox_MontantEuro_Acheter";
-            this.TextBox_MontantEuro_Acheter.Size = new System.Drawing.Size(100, 20);
-            this.TextBox_MontantEuro_Acheter.TabIndex = 7;
-            // 
-            // TextBox_MontantCrypto_Vendre
-            // 
-            this.TextBox_MontantCrypto_Vendre.Location = new System.Drawing.Point(1159, 137);
-            this.TextBox_MontantCrypto_Vendre.Name = "TextBox_MontantCrypto_Vendre";
-            this.TextBox_MontantCrypto_Vendre.Size = new System.Drawing.Size(100, 20);
-            this.TextBox_MontantCrypto_Vendre.TabIndex = 6;
-            // 
-            // TextBox_MontantCrypto_Acheter
-            // 
-            this.TextBox_MontantCrypto_Acheter.Location = new System.Drawing.Point(990, 138);
-            this.TextBox_MontantCrypto_Acheter.Name = "TextBox_MontantCrypto_Acheter";
-            this.TextBox_MontantCrypto_Acheter.Size = new System.Drawing.Size(100, 20);
-            this.TextBox_MontantCrypto_Acheter.TabIndex = 5;
-            // 
-            // Label_VendreCrypto
-            // 
-            this.Label_VendreCrypto.AutoSize = true;
-            this.Label_VendreCrypto.Location = new System.Drawing.Point(1190, 104);
-            this.Label_VendreCrypto.Name = "Label_VendreCrypto";
-            this.Label_VendreCrypto.Size = new System.Drawing.Size(41, 13);
-            this.Label_VendreCrypto.TabIndex = 4;
-            this.Label_VendreCrypto.Text = "Vendre";
-            // 
-            // Label_AcheterCrypto
-            // 
-            this.Label_AcheterCrypto.AutoSize = true;
-            this.Label_AcheterCrypto.Location = new System.Drawing.Point(1016, 104);
-            this.Label_AcheterCrypto.Name = "Label_AcheterCrypto";
-            this.Label_AcheterCrypto.Size = new System.Drawing.Size(44, 13);
-            this.Label_AcheterCrypto.TabIndex = 3;
-            this.Label_AcheterCrypto.Text = "Acheter";
-            // 
-            // Label_SoldeCryptoTexte
-            // 
-            this.Label_SoldeCryptoTexte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Label_SoldeCryptoTexte.AutoSize = true;
-            this.Label_SoldeCryptoTexte.ForeColor = System.Drawing.Color.White;
-            this.Label_SoldeCryptoTexte.Location = new System.Drawing.Point(1190, 4);
-            this.Label_SoldeCryptoTexte.Name = "Label_SoldeCryptoTexte";
-            this.Label_SoldeCryptoTexte.Size = new System.Drawing.Size(79, 13);
-            this.Label_SoldeCryptoTexte.TabIndex = 2;
-            this.Label_SoldeCryptoTexte.Text = "Solde en BTC :\r";
-            // 
-            // Label_NumeroWallet
-            // 
-            this.Label_NumeroWallet.AutoSize = true;
-            this.Label_NumeroWallet.ForeColor = System.Drawing.Color.White;
-            this.Label_NumeroWallet.Location = new System.Drawing.Point(3, 4);
-            this.Label_NumeroWallet.Name = "Label_NumeroWallet";
-            this.Label_NumeroWallet.Size = new System.Drawing.Size(74, 13);
-            this.Label_NumeroWallet.TabIndex = 1;
-            this.Label_NumeroWallet.Text = "NumeroWallet";
-            // 
-            // Label_NomWallet
-            // 
-            this.Label_NomWallet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Label_NomWallet.AutoSize = true;
-            this.Label_NomWallet.ForeColor = System.Drawing.Color.White;
-            this.Label_NomWallet.Location = new System.Drawing.Point(595, 15);
-            this.Label_NomWallet.Name = "Label_NomWallet";
-            this.Label_NomWallet.Size = new System.Drawing.Size(67, 13);
-            this.Label_NomWallet.TabIndex = 0;
-            this.Label_NomWallet.Text = "Compte BTC";
-            // 
-            // Panel_DC_Euro
-            // 
-            this.Panel_DC_Euro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Panel_DC_Euro.AutoScroll = true;
-            this.Panel_DC_Euro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(194)))), ((int)(((byte)(236)))));
-            this.Panel_DC_Euro.Controls.Add(this.Label_HistoriqueTransactions);
-            this.Panel_DC_Euro.Controls.Add(this.dataGridView_HistoriqueTransaction);
-            this.Panel_DC_Euro.Controls.Add(this.Chart_RevenuesMois);
-            this.Panel_DC_Euro.Controls.Add(this.Chart_DepensesMois);
-            this.Panel_DC_Euro.Controls.Add(this.Label_DC_Solde);
-            this.Panel_DC_Euro.Controls.Add(this.Label_DC_NumeroCarte);
-            this.Panel_DC_Euro.Controls.Add(this.Label_DC_NumeroCompte);
-            this.Panel_DC_Euro.Controls.Add(this.Label_DC_NomCompte);
-            this.Panel_DC_Euro.Controls.Add(this.Chart_Depenses);
-            this.Panel_DC_Euro.Location = new System.Drawing.Point(14, 56);
-            this.Panel_DC_Euro.Margin = new System.Windows.Forms.Padding(2);
-            this.Panel_DC_Euro.Name = "Panel_DC_Euro";
-            this.Panel_DC_Euro.Size = new System.Drawing.Size(1300, 387);
-            this.Panel_DC_Euro.TabIndex = 21;
-            this.Panel_DC_Euro.Visible = false;
-            // 
-            // Label_HistoriqueTransactions
-            // 
-            this.Label_HistoriqueTransactions.AutoSize = true;
-            this.Label_HistoriqueTransactions.Location = new System.Drawing.Point(128, 46);
-            this.Label_HistoriqueTransactions.Name = "Label_HistoriqueTransactions";
-            this.Label_HistoriqueTransactions.Size = new System.Drawing.Size(138, 13);
-            this.Label_HistoriqueTransactions.TabIndex = 9;
-            this.Label_HistoriqueTransactions.Text = "Historique des Transactions";
-            // 
-            // dataGridView_HistoriqueTransaction
-            // 
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.Transparent;
-            this.dataGridView_HistoriqueTransaction.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
-            this.dataGridView_HistoriqueTransaction.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView_HistoriqueTransaction.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView_HistoriqueTransaction.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(67)))), ((int)(((byte)(153)))));
-            this.dataGridView_HistoriqueTransaction.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView_HistoriqueTransaction.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView_HistoriqueTransaction.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(67)))), ((int)(((byte)(153)))));
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_HistoriqueTransaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
-            this.dataGridView_HistoriqueTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_HistoriqueTransaction.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idTransaction,
-            this.TerminalName,
-            this.WalletName,
-            this.Amount,
-            this.DateTrans,
-            this.Action,
-            this.NameDest,
-            this.Account});
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(67)))), ((int)(((byte)(153)))));
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_HistoriqueTransaction.DefaultCellStyle = dataGridViewCellStyle29;
-            this.dataGridView_HistoriqueTransaction.GridColor = System.Drawing.Color.Black;
-            this.dataGridView_HistoriqueTransaction.Location = new System.Drawing.Point(125, 69);
-            this.dataGridView_HistoriqueTransaction.Name = "dataGridView_HistoriqueTransaction";
-            this.dataGridView_HistoriqueTransaction.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView_HistoriqueTransaction.RowHeadersVisible = false;
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.White;
-            this.dataGridView_HistoriqueTransaction.RowsDefaultCellStyle = dataGridViewCellStyle30;
-            this.dataGridView_HistoriqueTransaction.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(67)))), ((int)(((byte)(153)))));
-            this.dataGridView_HistoriqueTransaction.Size = new System.Drawing.Size(1097, 292);
-            this.dataGridView_HistoriqueTransaction.TabIndex = 8;
-            // 
-            // idTransaction
-            // 
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.idTransaction.DefaultCellStyle = dataGridViewCellStyle28;
-            this.idTransaction.HeaderText = "Numéro Transaction";
-            this.idTransaction.Name = "idTransaction";
-            this.idTransaction.Visible = false;
-            // 
-            // TerminalName
-            // 
-            this.TerminalName.HeaderText = "Nom Terminal";
-            this.TerminalName.Name = "TerminalName";
-            this.TerminalName.Visible = false;
-            // 
-            // WalletName
-            // 
-            this.WalletName.HeaderText = "Nom Wallet";
-            this.WalletName.Name = "WalletName";
-            this.WalletName.Visible = false;
-            // 
-            // Amount
-            // 
-            this.Amount.HeaderText = "Montant";
-            this.Amount.Name = "Amount";
-            this.Amount.Visible = false;
-            // 
-            // DateTrans
-            // 
-            this.DateTrans.HeaderText = "Date Oppération";
-            this.DateTrans.Name = "DateTrans";
-            this.DateTrans.Visible = false;
-            // 
-            // Action
-            // 
-            this.Action.HeaderText = "Action";
-            this.Action.Name = "Action";
-            this.Action.Visible = false;
-            // 
-            // NameDest
-            // 
-            this.NameDest.HeaderText = "Nom destinataire";
-            this.NameDest.Name = "NameDest";
-            this.NameDest.Visible = false;
-            // 
-            // Account
-            // 
-            this.Account.HeaderText = "Nom Compte";
-            this.Account.Name = "Account";
-            this.Account.Visible = false;
-            // 
-            // Chart_RevenuesMois
-            // 
-            this.Chart_RevenuesMois.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea16.Name = "ChartArea1";
-            this.Chart_RevenuesMois.ChartAreas.Add(chartArea16);
-            legend16.Name = "Legend1";
-            this.Chart_RevenuesMois.Legends.Add(legend16);
-            this.Chart_RevenuesMois.Location = new System.Drawing.Point(558, 1241);
-            this.Chart_RevenuesMois.Name = "Chart_RevenuesMois";
-            series16.ChartArea = "ChartArea1";
-            series16.Legend = "Legend1";
-            series16.Name = "Series1";
-            this.Chart_RevenuesMois.Series.Add(series16);
-            this.Chart_RevenuesMois.Size = new System.Drawing.Size(283, 300);
-            this.Chart_RevenuesMois.TabIndex = 7;
-            this.Chart_RevenuesMois.Text = "Dépenses";
-            // 
-            // Chart_DepensesMois
-            // 
-            this.Chart_DepensesMois.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea17.Name = "ChartArea1";
-            this.Chart_DepensesMois.ChartAreas.Add(chartArea17);
-            legend17.Name = "Legend1";
-            this.Chart_DepensesMois.Legends.Add(legend17);
-            this.Chart_DepensesMois.Location = new System.Drawing.Point(408, 806);
-            this.Chart_DepensesMois.Margin = new System.Windows.Forms.Padding(2);
-            this.Chart_DepensesMois.Name = "Chart_DepensesMois";
-            series17.ChartArea = "ChartArea1";
-            series17.Legend = "Legend1";
-            series17.Name = "Series1";
-            this.Chart_DepensesMois.Series.Add(series17);
-            this.Chart_DepensesMois.Size = new System.Drawing.Size(635, 322);
-            this.Chart_DepensesMois.TabIndex = 6;
-            this.Chart_DepensesMois.Text = "Dépense";
-            // 
-            // Label_DC_Solde
-            // 
-            this.Label_DC_Solde.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Label_DC_Solde.AutoSize = true;
-            this.Label_DC_Solde.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(67)))), ((int)(((byte)(153)))));
-            this.Label_DC_Solde.ForeColor = System.Drawing.Color.White;
-            this.Label_DC_Solde.Location = new System.Drawing.Point(568, 210);
-            this.Label_DC_Solde.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Label_DC_Solde.Name = "Label_DC_Solde";
-            this.Label_DC_Solde.Size = new System.Drawing.Size(34, 13);
-            this.Label_DC_Solde.TabIndex = 4;
-            this.Label_DC_Solde.Text = "Solde";
-            // 
-            // Label_DC_NumeroCarte
-            // 
-            this.Label_DC_NumeroCarte.AutoSize = true;
-            this.Label_DC_NumeroCarte.ForeColor = System.Drawing.Color.White;
-            this.Label_DC_NumeroCarte.Location = new System.Drawing.Point(2, 16);
-            this.Label_DC_NumeroCarte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Label_DC_NumeroCarte.Name = "Label_DC_NumeroCarte";
-            this.Label_DC_NumeroCarte.Size = new System.Drawing.Size(50, 13);
-            this.Label_DC_NumeroCarte.TabIndex = 3;
-            this.Label_DC_NumeroCarte.Text = "N° Carte:";
-            // 
-            // Label_DC_NumeroCompte
-            // 
-            this.Label_DC_NumeroCompte.AutoSize = true;
-            this.Label_DC_NumeroCompte.ForeColor = System.Drawing.Color.White;
-            this.Label_DC_NumeroCompte.Location = new System.Drawing.Point(2, 3);
-            this.Label_DC_NumeroCompte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Label_DC_NumeroCompte.Name = "Label_DC_NumeroCompte";
-            this.Label_DC_NumeroCompte.Size = new System.Drawing.Size(64, 13);
-            this.Label_DC_NumeroCompte.TabIndex = 1;
-            this.Label_DC_NumeroCompte.Text = "N° Compte: ";
-            // 
-            // Label_DC_NomCompte
-            // 
-            this.Label_DC_NomCompte.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Label_DC_NomCompte.AutoSize = true;
-            this.Label_DC_NomCompte.ForeColor = System.Drawing.Color.White;
-            this.Label_DC_NomCompte.Location = new System.Drawing.Point(624, 13);
-            this.Label_DC_NomCompte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Label_DC_NomCompte.Name = "Label_DC_NomCompte";
-            this.Label_DC_NomCompte.Size = new System.Drawing.Size(65, 13);
-            this.Label_DC_NomCompte.TabIndex = 0;
-            this.Label_DC_NomCompte.Text = "NomCompte";
-            // 
-            // Chart_Depenses
-            // 
-            this.Chart_Depenses.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Chart_Depenses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(67)))), ((int)(((byte)(153)))));
-            this.Chart_Depenses.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea18.AlignmentOrientation = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.None;
-            chartArea18.BackColor = System.Drawing.Color.Transparent;
-            chartArea18.Name = "ChartArea1";
-            this.Chart_Depenses.ChartAreas.Add(chartArea18);
-            legend18.BackColor = System.Drawing.Color.Transparent;
-            legend18.Name = "Legend1";
-            this.Chart_Depenses.Legends.Add(legend18);
-            this.Chart_Depenses.Location = new System.Drawing.Point(261, 418);
-            this.Chart_Depenses.Margin = new System.Windows.Forms.Padding(2);
-            this.Chart_Depenses.Name = "Chart_Depenses";
-            this.Chart_Depenses.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series18.ChartArea = "ChartArea1";
-            series18.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series18.Legend = "Legend1";
-            series18.Name = "Dépenses";
-            dataPoint16.AxisLabel = "";
-            dataPoint16.Label = "Voiture \\n#PERCENT";
-            dataPoint17.AxisLabel = "";
-            dataPoint17.Label = "Course \\n#PERCENT";
-            dataPoint18.AxisLabel = "";
-            dataPoint18.Label = "Voyage \\n#PERCENT";
-            series18.Points.Add(dataPoint16);
-            series18.Points.Add(dataPoint17);
-            series18.Points.Add(dataPoint18);
-            this.Chart_Depenses.Series.Add(series18);
-            this.Chart_Depenses.Size = new System.Drawing.Size(782, 328);
-            this.Chart_Depenses.TabIndex = 2;
-            this.Chart_Depenses.Text = "Dépenses";
-            title6.ForeColor = System.Drawing.Color.White;
-            title6.Name = "Dépenses";
-            title6.Text = "Dépenses";
-            this.Chart_Depenses.Titles.Add(title6);
-            // 
-            // Panel_CreationCompte
-            // 
-            this.Panel_CreationCompte.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Panel_CreationCompte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(194)))), ((int)(((byte)(236)))));
-            this.Panel_CreationCompte.Controls.Add(this.Label_TitreCreationCompte);
-            this.Panel_CreationCompte.Controls.Add(this.Label_ChoixForfait);
-            this.Panel_CreationCompte.Controls.Add(this.Label_ChoixTypeCompte);
-            this.Panel_CreationCompte.Controls.Add(this.Button_ValiderCreationCompte);
-            this.Panel_CreationCompte.Controls.Add(this.ListBox_ChoixForfait);
-            this.Panel_CreationCompte.Controls.Add(this.ListBox_ChoixTypeCompte);
-            this.Panel_CreationCompte.Location = new System.Drawing.Point(14, 56);
-            this.Panel_CreationCompte.Name = "Panel_CreationCompte";
-            this.Panel_CreationCompte.Size = new System.Drawing.Size(1300, 387);
-            this.Panel_CreationCompte.TabIndex = 25;
-            this.Panel_CreationCompte.Visible = false;
-            // 
-            // Label_TitreCreationCompte
-            // 
-            this.Label_TitreCreationCompte.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Label_TitreCreationCompte.AutoSize = true;
-            this.Label_TitreCreationCompte.BackColor = System.Drawing.Color.Transparent;
-            this.Label_TitreCreationCompte.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_TitreCreationCompte.ForeColor = System.Drawing.Color.White;
-            this.Label_TitreCreationCompte.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Label_TitreCreationCompte.Location = new System.Drawing.Point(555, 13);
-            this.Label_TitreCreationCompte.Name = "Label_TitreCreationCompte";
-            this.Label_TitreCreationCompte.Size = new System.Drawing.Size(277, 39);
-            this.Label_TitreCreationCompte.TabIndex = 29;
-            this.Label_TitreCreationCompte.Text = "Créer un Compte";
-            this.Label_TitreCreationCompte.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // Label_ChoixForfait
-            // 
-            this.Label_ChoixForfait.AutoSize = true;
-            this.Label_ChoixForfait.Location = new System.Drawing.Point(821, 147);
-            this.Label_ChoixForfait.Name = "Label_ChoixForfait";
-            this.Label_ChoixForfait.Size = new System.Drawing.Size(65, 13);
-            this.Label_ChoixForfait.TabIndex = 4;
-            this.Label_ChoixForfait.Text = "Choix Forfait";
-            // 
-            // Label_ChoixTypeCompte
-            // 
-            this.Label_ChoixTypeCompte.AutoSize = true;
-            this.Label_ChoixTypeCompte.Location = new System.Drawing.Point(439, 147);
-            this.Label_ChoixTypeCompte.Name = "Label_ChoixTypeCompte";
-            this.Label_ChoixTypeCompte.Size = new System.Drawing.Size(72, 13);
-            this.Label_ChoixTypeCompte.TabIndex = 3;
-            this.Label_ChoixTypeCompte.Text = "Choix Compte";
-            // 
-            // Button_ValiderCreationCompte
-            // 
-            this.Button_ValiderCreationCompte.Location = new System.Drawing.Point(630, 290);
-            this.Button_ValiderCreationCompte.Name = "Button_ValiderCreationCompte";
-            this.Button_ValiderCreationCompte.Size = new System.Drawing.Size(75, 23);
-            this.Button_ValiderCreationCompte.TabIndex = 2;
-            this.Button_ValiderCreationCompte.Text = "Valider";
-            this.Button_ValiderCreationCompte.UseVisualStyleBackColor = true;
-            this.Button_ValiderCreationCompte.Click += new System.EventHandler(this.Button_ValiderCreationCompte_Click_1);
-            // 
-            // ListBox_ChoixForfait
-            // 
-            this.ListBox_ChoixForfait.FormattingEnabled = true;
-            this.ListBox_ChoixForfait.Items.AddRange(new object[] {
-            "Forfait1",
-            "Forfait2"});
-            this.ListBox_ChoixForfait.Location = new System.Drawing.Point(804, 177);
-            this.ListBox_ChoixForfait.Name = "ListBox_ChoixForfait";
-            this.ListBox_ChoixForfait.Size = new System.Drawing.Size(120, 95);
-            this.ListBox_ChoixForfait.TabIndex = 1;
-            // 
-            // ListBox_ChoixTypeCompte
-            // 
-            this.ListBox_ChoixTypeCompte.FormattingEnabled = true;
-            this.ListBox_ChoixTypeCompte.Items.AddRange(new object[] {
-            "Compte Courant",
-            "Compte Epargne"});
-            this.ListBox_ChoixTypeCompte.Location = new System.Drawing.Point(416, 177);
-            this.ListBox_ChoixTypeCompte.Name = "ListBox_ChoixTypeCompte";
-            this.ListBox_ChoixTypeCompte.Size = new System.Drawing.Size(120, 95);
-            this.ListBox_ChoixTypeCompte.TabIndex = 0;
-            // 
-            // Panel_RDV
-            // 
-            this.Panel_RDV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Panel_RDV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(194)))), ((int)(((byte)(236)))));
-            this.Panel_RDV.Controls.Add(this.GroupBox_Conseiller);
-            this.Panel_RDV.Controls.Add(this.Button_RDVEnvoyer);
-            this.Panel_RDV.Controls.Add(this.RichTextBox_RaisonRDV);
-            this.Panel_RDV.Controls.Add(this.ListBox_RaisonRDV);
-            this.Panel_RDV.Location = new System.Drawing.Point(14, 56);
-            this.Panel_RDV.Name = "Panel_RDV";
-            this.Panel_RDV.Size = new System.Drawing.Size(1300, 387);
-            this.Panel_RDV.TabIndex = 26;
-            this.Panel_RDV.Visible = false;
-            // 
-            // GroupBox_Conseiller
-            // 
-            this.GroupBox_Conseiller.AutoSize = true;
-            this.GroupBox_Conseiller.BackColor = System.Drawing.Color.Transparent;
-            this.GroupBox_Conseiller.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.GroupBox_Conseiller.Controls.Add(this.Label_Conseiller);
-            this.GroupBox_Conseiller.Controls.Add(this.Label_NOMConseiller);
-            this.GroupBox_Conseiller.Cursor = System.Windows.Forms.Cursors.Default;
-            this.GroupBox_Conseiller.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.GroupBox_Conseiller.Location = new System.Drawing.Point(394, 46);
-            this.GroupBox_Conseiller.Name = "GroupBox_Conseiller";
-            this.GroupBox_Conseiller.Size = new System.Drawing.Size(191, 53);
-            this.GroupBox_Conseiller.TabIndex = 5;
-            this.GroupBox_Conseiller.TabStop = false;
-            // 
-            // Label_Conseiller
-            // 
-            this.Label_Conseiller.AutoSize = true;
-            this.Label_Conseiller.Location = new System.Drawing.Point(2, 24);
-            this.Label_Conseiller.Name = "Label_Conseiller";
-            this.Label_Conseiller.Size = new System.Drawing.Size(85, 13);
-            this.Label_Conseiller.TabIndex = 0;
-            this.Label_Conseiller.Text = "Votre conseiller :";
-            // 
-            // Label_NOMConseiller
-            // 
-            this.Label_NOMConseiller.AutoSize = true;
-            this.Label_NOMConseiller.Location = new System.Drawing.Point(86, 24);
-            this.Label_NOMConseiller.Name = "Label_NOMConseiller";
-            this.Label_NOMConseiller.Size = new System.Drawing.Size(99, 13);
-            this.Label_NOMConseiller.TabIndex = 1;
-            this.Label_NOMConseiller.Text = "NOMCONSEILLER";
-            // 
-            // Button_RDVEnvoyer
-            // 
-            this.Button_RDVEnvoyer.Location = new System.Drawing.Point(450, 306);
-            this.Button_RDVEnvoyer.Name = "Button_RDVEnvoyer";
-            this.Button_RDVEnvoyer.Size = new System.Drawing.Size(75, 23);
-            this.Button_RDVEnvoyer.TabIndex = 4;
-            this.Button_RDVEnvoyer.Text = "Envoyer";
-            this.Button_RDVEnvoyer.UseVisualStyleBackColor = true;
-            // 
-            // RichTextBox_RaisonRDV
-            // 
-            this.RichTextBox_RaisonRDV.Location = new System.Drawing.Point(299, 190);
-            this.RichTextBox_RaisonRDV.MaxLength = 255;
-            this.RichTextBox_RaisonRDV.Name = "RichTextBox_RaisonRDV";
-            this.RichTextBox_RaisonRDV.Size = new System.Drawing.Size(352, 91);
-            this.RichTextBox_RaisonRDV.TabIndex = 3;
-            this.RichTextBox_RaisonRDV.Text = "";
-            // 
-            // ListBox_RaisonRDV
-            // 
-            this.ListBox_RaisonRDV.FormattingEnabled = true;
-            this.ListBox_RaisonRDV.Items.AddRange(new object[] {
-            "Liste raison"});
-            this.ListBox_RaisonRDV.Location = new System.Drawing.Point(404, 117);
-            this.ListBox_RaisonRDV.Name = "ListBox_RaisonRDV";
-            this.ListBox_RaisonRDV.Size = new System.Drawing.Size(159, 56);
-            this.ListBox_RaisonRDV.TabIndex = 2;
             // 
             // Label_Role
             // 
@@ -1389,33 +1416,48 @@ namespace Fulbank
             this.Label_Role.TabIndex = 4;
             this.Label_Role.Text = "Role";
             // 
+            // listBox_recipientList
+            // 
+            this.listBox_recipientList.FormattingEnabled = true;
+            this.listBox_recipientList.Location = new System.Drawing.Point(607, 188);
+            this.listBox_recipientList.Name = "listBox_recipientList";
+            this.listBox_recipientList.Size = new System.Drawing.Size(157, 95);
+            this.listBox_recipientList.TabIndex = 29;
+            // 
+            // button_DeleteRecipient
+            // 
+            this.button_DeleteRecipient.Location = new System.Drawing.Point(652, 296);
+            this.button_DeleteRecipient.Name = "button_DeleteRecipient";
+            this.button_DeleteRecipient.Size = new System.Drawing.Size(75, 23);
+            this.button_DeleteRecipient.TabIndex = 30;
+            this.button_DeleteRecipient.Text = "Supprimer";
+            this.button_DeleteRecipient.UseVisualStyleBackColor = true;
+            this.button_DeleteRecipient.Click += new System.EventHandler(this.button_DeleteRecipient_Click);
+            // 
             // Ecran_Euro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(194)))), ((int)(((byte)(236)))));
-            this.ClientSize = new System.Drawing.Size(1364, 687);
+            this.ClientSize = new System.Drawing.Size(1364, 749);
             this.Controls.Add(this.Label_Role);
             this.Controls.Add(this.Label_NomPrenom);
             this.Controls.Add(this.Label_Identifiant);
             this.Controls.Add(this.Button_Deconnexion);
             this.Controls.Add(this.Panel_EcranEuro);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Ecran_Euro";
             this.Text = "Euro";
             this.Panel_EcranEuro.ResumeLayout(false);
-            this.Panel_ChoixCompte.ResumeLayout(false);
-            this.Panel_Compte3.ResumeLayout(false);
-            this.Panel_Compte3.PerformLayout();
-            this.Panel_Compte2.ResumeLayout(false);
-            this.Panel_Compte2.PerformLayout();
-            this.Panel_Compte1.ResumeLayout(false);
-            this.Panel_Compte1.PerformLayout();
-            this.Panel_DepotRetrait.ResumeLayout(false);
-            this.Panel_DepotRetrait.PerformLayout();
-            this.Panel_Virement.ResumeLayout(false);
-            this.Panel_Virement.PerformLayout();
+            this.Panel_GererWallet.ResumeLayout(false);
+            this.Panel_GererWallet.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_WalletClient)).EndInit();
             this.Panel_DC_Crypto.ResumeLayout(false);
             this.Panel_DC_Crypto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Portefeuille)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CoursCrypto)).EndInit();
+            this.groupBox_Crypto.ResumeLayout(false);
+            this.groupBox_Crypto.PerformLayout();
             this.Panel_DC_Euro.ResumeLayout(false);
             this.Panel_DC_Euro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_HistoriqueTransaction)).EndInit();
@@ -1428,6 +1470,17 @@ namespace Fulbank
             this.Panel_RDV.PerformLayout();
             this.GroupBox_Conseiller.ResumeLayout(false);
             this.GroupBox_Conseiller.PerformLayout();
+            this.Panel_ChoixCompte.ResumeLayout(false);
+            this.Panel_Compte3.ResumeLayout(false);
+            this.Panel_Compte3.PerformLayout();
+            this.Panel_Compte2.ResumeLayout(false);
+            this.Panel_Compte2.PerformLayout();
+            this.Panel_Compte1.ResumeLayout(false);
+            this.Panel_Compte1.PerformLayout();
+            this.Panel_DepotRetrait.ResumeLayout(false);
+            this.Panel_DepotRetrait.PerformLayout();
+            this.Panel_Virement.ResumeLayout(false);
+            this.Panel_Virement.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1459,32 +1512,17 @@ namespace Fulbank
         private System.Windows.Forms.TextBox TextBox_MontantVirement;
         private System.Windows.Forms.ListBox ListBox_CompteExpediteur;
         private System.Windows.Forms.Panel Panel_DC_Euro;
-        private System.Windows.Forms.Label Label_DC_NomCompte;
-        private System.Windows.Forms.Label Label_DC_NumeroCarte;
         private System.Windows.Forms.DataVisualization.Charting.Chart Chart_Depenses;
         private System.Windows.Forms.Label Label_DC_NumeroCompte;
         private System.Windows.Forms.Label Label_DC_Solde;
         private System.Windows.Forms.Label Label_Role;
         private System.Windows.Forms.Panel Panel_DC_Crypto;
-        private System.Windows.Forms.Label Label_NomWallet;
-        private System.Windows.Forms.Label Label_VendreCrypto;
-        private System.Windows.Forms.Label Label_AcheterCrypto;
-        private System.Windows.Forms.Label Label_SoldeCryptoTexte;
-        private System.Windows.Forms.Label Label_NumeroWallet;
-        private System.Windows.Forms.Button Button_ValiderCrypto_AchatVente;
-        private System.Windows.Forms.Label Label_Egal_Vendre;
-        private System.Windows.Forms.Label Label_Egal_Acheter;
-        private System.Windows.Forms.Label Label_CryptoEuro_Vendre;
-        private System.Windows.Forms.Label Label_CryptoEuro_Acheter;
-        private System.Windows.Forms.Label Label_NomCrypto_Vendre;
+        private System.Windows.Forms.Label Label_CurrentAccount;
+        private System.Windows.Forms.Button Button_ValiderCrypto_Achat;
         private System.Windows.Forms.Label Label_NomCrypto_Acheter;
-        private System.Windows.Forms.TextBox TextBox_MontantEuro_Vendre;
-        private System.Windows.Forms.TextBox TextBox_MontantEuro_Acheter;
-        private System.Windows.Forms.TextBox TextBox_MontantCrypto_Vendre;
-        private System.Windows.Forms.TextBox TextBox_MontantCrypto_Acheter;
+        private System.Windows.Forms.TextBox TextBox_QTECrypto;
         private System.Windows.Forms.RadioButton RadioButton_Retrait;
         private System.Windows.Forms.RadioButton RadioButton_Depot;
-        private System.Windows.Forms.Label Label_SoldeCrypto;
         private System.Windows.Forms.Label Label_Solde1;
         private System.Windows.Forms.DataVisualization.Charting.Chart Chart_DepensesMois;
         private System.Windows.Forms.DataVisualization.Charting.Chart Chart_RevenuesMois;
@@ -1509,10 +1547,8 @@ namespace Fulbank
         private System.Windows.Forms.DataGridView dataGridView_HistoriqueTransaction;
         private System.Windows.Forms.Label Label_HistoriqueTransactions;
         private System.Windows.Forms.Panel Panel_CreationCompte;
-        private System.Windows.Forms.Label Label_ChoixForfait;
         private System.Windows.Forms.Label Label_ChoixTypeCompte;
         private System.Windows.Forms.Button Button_ValiderCreationCompte;
-        private System.Windows.Forms.ListBox ListBox_ChoixForfait;
         private System.Windows.Forms.ListBox ListBox_ChoixTypeCompte;
         private System.Windows.Forms.Label Label_SoldeVirement;
         private System.Windows.Forms.Panel Panel_RDV;
@@ -1538,5 +1574,25 @@ namespace Fulbank
         private System.Windows.Forms.DataGridViewTextBoxColumn Account;
         private System.Windows.Forms.Label Label_TitreVirement;
         private System.Windows.Forms.Label Label_TitreCreationCompte;
+        private System.Windows.Forms.Label Label_TitreData_Droite;
+        private System.Windows.Forms.Label Label_TitreData_Gauche;
+        private System.Windows.Forms.DataGridView dataGridView_Portefeuille;
+        private System.Windows.Forms.DataGridView dataGridView_CoursCrypto;
+        private System.Windows.Forms.GroupBox groupBox_Crypto;
+        private System.Windows.Forms.Button Button_GererWallet;
+        private System.Windows.Forms.Panel Panel_GererWallet;
+        private System.Windows.Forms.Button Button_WalletAjout;
+        private System.Windows.Forms.Label Label_NomWalletAjout;
+        private System.Windows.Forms.ListBox ListBox_TypeWalletAjout;
+        private System.Windows.Forms.TextBox TextBox_NomWalletAjout;
+        private System.Windows.Forms.Button Button_ValiderCrypto_Vente;
+        private System.Windows.Forms.Button button_DeleteWallet;
+        private System.Windows.Forms.Button button_ChangeName;
+        private System.Windows.Forms.Label label_ChangeWalletName;
+        private System.Windows.Forms.TextBox textBox_ChangeWalletName;
+        private System.Windows.Forms.Label label_WalletClient;
+        private System.Windows.Forms.DataGridView dataGridView_WalletClient;
+        private System.Windows.Forms.Button button_DeleteRecipient;
+        private System.Windows.Forms.ListBox listBox_recipientList;
     }
 }

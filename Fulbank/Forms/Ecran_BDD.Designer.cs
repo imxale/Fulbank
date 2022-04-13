@@ -38,6 +38,8 @@ namespace Fulbank
             this.TextBox_NomBDD = new System.Windows.Forms.TextBox();
             this.TextBox_Identifiant = new System.Windows.Forms.TextBox();
             this.TextBox_MotDePasse = new System.Windows.Forms.TextBox();
+            this.button_testbdd = new System.Windows.Forms.Button();
+            this.label_testBDD = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Label_HostName
@@ -83,7 +85,7 @@ namespace Fulbank
             // Button_Envoyer
             // 
             this.Button_Envoyer.Location = new System.Drawing.Point(631, 315);
-            this.Button_Envoyer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Button_Envoyer.Margin = new System.Windows.Forms.Padding(4);
             this.Button_Envoyer.Name = "Button_Envoyer";
             this.Button_Envoyer.Size = new System.Drawing.Size(100, 28);
             this.Button_Envoyer.TabIndex = 4;
@@ -94,7 +96,7 @@ namespace Fulbank
             // TextBox_HostName
             // 
             this.TextBox_HostName.Location = new System.Drawing.Point(631, 105);
-            this.TextBox_HostName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextBox_HostName.Margin = new System.Windows.Forms.Padding(4);
             this.TextBox_HostName.Name = "TextBox_HostName";
             this.TextBox_HostName.Size = new System.Drawing.Size(132, 22);
             this.TextBox_HostName.TabIndex = 5;
@@ -102,7 +104,7 @@ namespace Fulbank
             // TextBox_NomBDD
             // 
             this.TextBox_NomBDD.Location = new System.Drawing.Point(631, 155);
-            this.TextBox_NomBDD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextBox_NomBDD.Margin = new System.Windows.Forms.Padding(4);
             this.TextBox_NomBDD.Name = "TextBox_NomBDD";
             this.TextBox_NomBDD.Size = new System.Drawing.Size(132, 22);
             this.TextBox_NomBDD.TabIndex = 6;
@@ -110,7 +112,7 @@ namespace Fulbank
             // TextBox_Identifiant
             // 
             this.TextBox_Identifiant.Location = new System.Drawing.Point(631, 202);
-            this.TextBox_Identifiant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextBox_Identifiant.Margin = new System.Windows.Forms.Padding(4);
             this.TextBox_Identifiant.Name = "TextBox_Identifiant";
             this.TextBox_Identifiant.Size = new System.Drawing.Size(132, 22);
             this.TextBox_Identifiant.TabIndex = 7;
@@ -118,10 +120,30 @@ namespace Fulbank
             // TextBox_MotDePasse
             // 
             this.TextBox_MotDePasse.Location = new System.Drawing.Point(631, 255);
-            this.TextBox_MotDePasse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextBox_MotDePasse.Margin = new System.Windows.Forms.Padding(4);
             this.TextBox_MotDePasse.Name = "TextBox_MotDePasse";
             this.TextBox_MotDePasse.Size = new System.Drawing.Size(132, 22);
             this.TextBox_MotDePasse.TabIndex = 8;
+            // 
+            // button_testbdd
+            // 
+            this.button_testbdd.Location = new System.Drawing.Point(631, 364);
+            this.button_testbdd.Name = "button_testbdd";
+            this.button_testbdd.Size = new System.Drawing.Size(100, 29);
+            this.button_testbdd.TabIndex = 9;
+            this.button_testbdd.Text = "Test BDD";
+            this.button_testbdd.UseVisualStyleBackColor = true;
+            this.button_testbdd.Click += new System.EventHandler(this.button_testbdd_Click);
+            // 
+            // label_testBDD
+            // 
+            this.label_testBDD.AutoSize = true;
+            this.label_testBDD.Location = new System.Drawing.Point(646, 408);
+            this.label_testBDD.Name = "label_testBDD";
+            this.label_testBDD.Size = new System.Drawing.Size(44, 16);
+            this.label_testBDD.TabIndex = 10;
+            this.label_testBDD.Text = "label1";
+            this.label_testBDD.Visible = false;
             // 
             // Ecran_BDD
             // 
@@ -129,6 +151,8 @@ namespace Fulbank
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(194)))), ((int)(((byte)(236)))));
             this.ClientSize = new System.Drawing.Size(1819, 922);
+            this.Controls.Add(this.label_testBDD);
+            this.Controls.Add(this.button_testbdd);
             this.Controls.Add(this.TextBox_MotDePasse);
             this.Controls.Add(this.TextBox_Identifiant);
             this.Controls.Add(this.TextBox_NomBDD);
@@ -139,7 +163,7 @@ namespace Fulbank
             this.Controls.Add(this.Label_NomBDD);
             this.Controls.Add(this.Label_HostName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Ecran_BDD";
             this.Text = "Base de donnée";
             this.ResumeLayout(false);
@@ -158,5 +182,7 @@ namespace Fulbank
         private System.Windows.Forms.TextBox TextBox_NomBDD;
         private System.Windows.Forms.TextBox TextBox_Identifiant;
         private System.Windows.Forms.TextBox TextBox_MotDePasse;
+        private System.Windows.Forms.Button button_testbdd;
+        private System.Windows.Forms.Label label_testBDD;
     }
 }

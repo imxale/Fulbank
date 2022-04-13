@@ -66,7 +66,7 @@ namespace Fulbank.Model
 
         public DataTable selectPersonAdmin()
         {
-            string sqlCmd = "select * FROM person";
+            string sqlCmd = "SELECT * FROM person";
 
             //Execution de la requête
             MySqlDataAdapter adr = new MySqlDataAdapter(sqlCmd, DbMySql.GetDBConn());
@@ -124,11 +124,18 @@ namespace Fulbank.Model
 
         public int updatePerson(Person aPersonne)
         {
-            string querry = "UPDATE person SET IDROLE = @idrole AND NAME = @name" +
-                " AND FNAME = @fname" +
-                " AND BIRTH = @birth AND MAIL = @mail" +
-                " AND ADDRESS = @address AND CITY = @city" +
-                " AND POSTAL = @postal AND ISVALID = @isvalid WHERE IDPERSON = "+aPersonne.IdPerson+";";
+            string querry = "UPDATE person " +
+                //" SET IDROLE = @idrole " +
+                " SET NAME = @name, " +
+                " FNAME = @fname, " +
+                " BIRTH = @birth, " +
+                " MAIL = @mail, " +
+                " ADDRESS = @address, " +
+                " CITY = @city, " +
+                " POSTAL = @postal, " +
+                " USER = @user " +
+                //" ISVALID = @isvalid " +
+                "WHERE IDPERSON = " + aPersonne.IdPerson+";";
 
             MySqlConnection con = DbMySql.GetDBConn();
             con.Open();
@@ -137,7 +144,8 @@ namespace Fulbank.Model
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
 
-            cmd.Parameters.Add("@idrole", MySqlDbType.Int32).Value = aPersonne.IdRole;
+            //cmd.Parameters.Add("@idrole", MySqlDbType.Int32).Value = aPersonne.IdRole;
+            cmd.Parameters.Add("@idperson", MySqlDbType.Int32).Value = aPersonne.IdPerson;
             cmd.Parameters.Add("@name", MySqlDbType.VarChar).Value = aPersonne.Name;
             cmd.Parameters.Add("@fname", MySqlDbType.VarChar).Value = aPersonne.Fname;
             cmd.Parameters.Add("@birth", MySqlDbType.Date).Value = aPersonne.Birth;
@@ -145,7 +153,41 @@ namespace Fulbank.Model
             cmd.Parameters.Add("@address", MySqlDbType.VarChar).Value = aPersonne.Address;
             cmd.Parameters.Add("@city", MySqlDbType.VarChar).Value = aPersonne.City;
             cmd.Parameters.Add("@postal", MySqlDbType.Int32).Value = aPersonne.Postal;
-            cmd.Parameters.Add("@isvalid", MySqlDbType.Int32).Value = aPersonne.IsValid;
+            cmd.Parameters.Add("@user", MySqlDbType.VarChar).Value = aPersonne.User;
+            //cmd.Parameters.Add("@isvalid", MySqlDbType.Int32).Value = aPersonne.IsValid;
+
+            int resultat = Convert.ToInt32(cmd.ExecuteNonQuery());
+            con.Close();
+            return resultat;
+        }
+                
+        public int resetPassword(Person aPerson)
+        {
+            string sqlCmd = "SELECT CREATIONDATE FROM person WHERE MAIL = '" + aPerson.Mail + "'";
+            //Execution de la requête
+            MySqlDataAdapter adr = new MySqlDataAdapter(sqlCmd, DbMySql.GetDBConn());
+            adr.SelectCommand.CommandType = CommandType.Text;
+            DataTable dt = new DataTable();
+            adr.Fill(dt);
+
+            string date = "";
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                DateTime creationdate = DateTime.Parse(dr["CREATIONDATE"].ToString());
+                date = creationdate.Date.ToString("yyyy-MM-dd");
+            }
+
+            string sql = "UPDATE person SET PASSWORD = @password WHERE MAIL = '" + aPerson.Mail + "'";
+
+            MySqlConnection con = DbMySql.GetDBConn();
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+
+            cmd.Parameters.Add("@password", MySqlDbType.VarChar).Value = Hash(aPerson.Password + date);
 
             int resultat = Convert.ToInt32(cmd.ExecuteNonQuery());
             con.Close();

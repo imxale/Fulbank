@@ -66,6 +66,7 @@ namespace Fulbank.Model
             con.Close();
             return resultat;
         }
+
         public DataTable selectIdType(string name)
         {
             string sqlCmd = "SELECT IDACCOUNTTYPE FROM recipient " +
@@ -77,6 +78,23 @@ namespace Fulbank.Model
             DataTable dt = new DataTable();
             adr.Fill(dt);
             return dt;
+        }
+
+        public int deleteRecipient(Recipient aRecipient)
+        {
+            string querry = "DELETE FROM recipient WHERE IDRECIPIENT = "+ aRecipient.IdRecipient +"";
+
+            MySqlConnection con = DbMySql.GetDBConn();
+            con.Open();
+
+            MySqlCommand cmd = new MySqlCommand(querry, con);
+
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+
+            int resultat = Convert.ToInt32(cmd.ExecuteNonQuery());
+            con.Close();
+            return resultat;
         }
     }
 }

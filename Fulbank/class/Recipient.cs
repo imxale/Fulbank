@@ -10,6 +10,7 @@ namespace Fulbank
 {
     class Recipient
     {
+        private int idRecipient;
         private string name;
         private int accountNumber;
         private int idPerson;
@@ -42,6 +43,18 @@ namespace Fulbank
         {
             RecipientModel unepersone = new RecipientModel();
             return unepersone.insertRecipient(this);
+        }
+
+        public int DeleteRecipient()
+        {
+            RecipientModel aRecipient = new RecipientModel();
+            return aRecipient.deleteRecipient(this);
+        }
+
+        public int IdRecipient
+        {
+            get => this.idRecipient;
+            set => this.idRecipient = value;
         }
 
         public string Name

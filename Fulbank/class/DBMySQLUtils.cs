@@ -26,7 +26,7 @@ namespace Fulbank
         public static MySqlConnection GetDBConn()
         {
             var Myini = new IniFile("../../../bdd.ini");            
-            string host = Myini.Read("host");
+            string host = Myini.Read("host");/*10.119.0.240*/
             string database = Myini.Read("database");
             string username = Myini.Read("username");
             string password = Myini.Read("password");
@@ -37,5 +37,11 @@ namespace Fulbank
 
             return conn;
         }
+
+        //test de la connection
+        public static void TestConnexion()
+        {
+            
+        }   
     }
 }
